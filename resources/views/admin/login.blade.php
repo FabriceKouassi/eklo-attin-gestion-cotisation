@@ -67,7 +67,6 @@
                     <hr>
                     <div class="text-center">
                         <a class="small" href="{{ route('resetPassword.form') }}">Mot de passe oublié ?</a> <br>
-                        <a class="small" href="{{ route('front.index') }}">Site Web</a>
                     </div>
                 </div>
                 </div>

@@ -36,29 +36,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $this->call([
-            VaccinFamilleSeeder::class,
-            FlashInfoSeeder::class,
-            ActualiteSeeder::class,
-            DocteurConseilSeeder::class,
-            DossierMoisSeeder::class,
-            FaqSeeder::class,
-            AntenneSeeder::class,
-            LaboratoireSeeder::class,
-            DirecteurSeeder::class,
-            HistoriqueSeeder::class,
-            OrganisationSeeder::class,
-            PolitiqueQualiteSeeder::class,
-            MissionSeeder::class,
-            VaccinationCalendrierSeeder::class,
-            TarificationSeeder::class,
-            VaccinDisponibleSeeder::class,
-            StrategiqueAxeSeeder::class,
-            StrategiqueObjectifSeeder::class,
-            StrategiqueActivieSeeder::class,
-            DocumentSeeder::class,
-            DocumentTypeSeeder::class,
-            AgendaSeeder::class,
-            BlogSeeder::class,
+            //
         ]);
     }
 }

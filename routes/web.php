@@ -38,31 +38,6 @@ use App\Http\Controllers\back\UserController;
 use App\Http\Controllers\back\VaccinationCalendrierController;
 use App\Http\Controllers\back\VaccinDisponibleController as BackVaccinDisponibleController;
 use App\Http\Controllers\back\VaccinFamilleContoller;
-use App\Http\Controllers\front\AboutController;
-use App\Http\Controllers\front\ActualiteController as FrontActualiteController;
-use App\Http\Controllers\front\AgendaController;
-use App\Http\Controllers\front\AntenneController as FrontAntenneController;
-use App\Http\Controllers\front\BlogController as FrontBlogController;
-use App\Http\Controllers\front\ContactController;
-use App\Http\Controllers\front\DirecteurController;
-use App\Http\Controllers\front\DocteurConseilController as FrontDocteurConseilController;
-use App\Http\Controllers\front\DocumentController;
-use App\Http\Controllers\front\DossierConseilController;
-use App\Http\Controllers\front\FaqController as FrontFaqController;
-use App\Http\Controllers\front\HistoriqueController;
-use App\Http\Controllers\front\IndexController;
-use App\Http\Controllers\front\LaboratoireController as FrontLaboratoireController;
-use App\Http\Controllers\front\LaboratoireTypeController as FrontLaboratoireTypeController;
-use App\Http\Controllers\front\MediathequeController as FrontMediathequeController;
-use App\Http\Controllers\front\MissionController;
-use App\Http\Controllers\front\OrganisationController;
-use App\Http\Controllers\front\PlanStrategiqueController;
-use App\Http\Controllers\front\PolitiqueQualiteController;
-use App\Http\Controllers\front\PrestationController as FrontPrestationController;
-use App\Http\Controllers\front\ReclamationController;
-use App\Http\Controllers\front\TarificationController;
-use App\Http\Controllers\front\VaccinationCalendrierController as FrontVaccinationCalendrierController;
-use App\Http\Controllers\front\VaccinDisponibleController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -77,52 +52,6 @@ use Illuminate\Support\Facades\Route;
 */;
 
 Route::prefix('/')->group(function () {
-    Route::get('/', [IndexController::class, 'index'])->name('front.index');
-    Route::post('/', [IndexController::class, 'search_antenne'])->name('front.search.antenne');
-    Route::post('/save-newsletter', [IndexController::class, 'saveNewsLetter'])->name('front.save.newsletter');
-
-    Route::get('antennes', [FrontAntenneController::class, 'index'])->name('front.antenne.index');
-    Route::get('antennes/{slug}', [FrontAntenneController::class, 'detail'])->name('front.antenne.detail');
-
-    Route::get('/blog', [FrontBlogController::class, 'index'])->name('front.blog.index');
-    Route::get('/blog/{slug}', [FrontBlogController::class, 'detail'])->name('front.blog.detail');
-    Route::get('/actualites/{slug}', [FrontActualiteController::class, 'detail'])->name('front.actualite.detail');
-
-    Route::get('/documents', [DocumentController::class, 'index'])->name('front.document.index');
-    Route::post('/documents/filter', [DocumentController::class, 'filter'])->name('front.document.filter');
-
-    Route::get('/agenda', [AgendaController::class, 'index'])->name('front.agenda.index');
-    Route::get('/agenda/{slug}', [AgendaController::class, 'detail'])->name('front.agenda.detail');
-    Route::post('/agenda/filter', [AgendaController::class, 'filter'])->name('front.agenda.filter');
-
-    Route::get('/contacts', [ContactController::class, 'index'])->name('front.contact.index');
-    Route::post('/contacts', [ContactController::class, 'save'])->name('front.save_contact.index');
-
-    Route::get('/reclamations-et-suggestions', [ReclamationController::class, 'index'])->name('front.reclamation.index');
-    Route::post('/reclamations-et-suggestions', [ReclamationController::class, 'save'])->name('front.save_reclamation.index');
-
-    Route::get('/tarifications', [TarificationController::class, 'index'])->name('front.tarification.index');
-    Route::get('/a-propos', [AboutController::class, 'index'])->name('front.about.index');
-    Route::get('/docteur-conseil', [FrontDocteurConseilController::class, 'index'])->name('front.docteur.index');
-    Route::get('/dossier-du-mois', [DossierConseilController::class, 'index'])->name('front.dossier.index');
-    Route::get('/presentation/mot-du-directeur', [DirecteurController::class, 'index'])->name('front.directeur.index');
-    Route::get('/presentation/historique', [HistoriqueController::class, 'index'])->name('front.historique.index');
-    Route::get('/presentation/missions', [MissionController::class, 'index'])->name('front.mission.index');
-    Route::get('/presentation/organisations', [OrganisationController::class, 'index'])->name('front.organisation.index');
-    Route::get('/presentation/plan-strategique', [PlanStrategiqueController::class, 'index'])->name('front.plan.index');
-    Route::get('/presentation/politique-qualite', [PolitiqueQualiteController::class, 'index'])->name('front.politique.index');
-    Route::get('/prestations', [FrontPrestationController::class, 'index'])->name('front.prestation.index');
-    Route::get('/prestations/{slug}', [FrontPrestationController::class, 'detail'])->name('front.prestation.detail');
-    Route::get('/calendrier-de-vaccination', [FrontVaccinationCalendrierController::class, 'index'])->name('front.calendrier.index');
-    Route::get('/vaccin-disponible', [VaccinDisponibleController::class, 'index'])->name('front.vaccin.index');
-    Route::get('/galerie', [FrontMediathequeController::class, 'index'])->name('front.galerie.index');
-    Route::get('/faq', [FrontFaqController::class, 'index'])->name('front.faq.index');
-
-    Route::get('type-de-laboratoires/{slug}', [FrontLaboratoireTypeController::class, 'detail'])->name('front.laboratoireType.detail');
-    Route::get('laboratoires/{slugLaboType}/{slugLabo}', [FrontLaboratoireController::class, 'detail'])->name('front.laboratoire.detail');
-});
-
-Route::prefix('admin_space')->group(function () {
     Route::middleware('guest')->group(function () {
         Route::get('/', [AuthController::class, 'showLoginForm'])->name('login.form');
         Route::post('/', [AuthController::class, 'loginUser'])->name('login.form');
@@ -192,43 +121,7 @@ Route::prefix('admin_space')->group(function () {
                     Route::delete('/many-delete', 'manyDelete')->name('newsletter.manyDelete');
                 });
         });
-
-        Route::prefix('plan-strategique/axes')->group(function () {
-            Route::controller(AxeController::class)
-                ->group(function () {
-                    Route::get('/', 'index')->name('strategiqueAxe.all');
-                    Route::get('/new', 'showSaveForm')->name('strategiqueAxe.new');
-                    Route::post('/new', 'saveForm')->name('strategiqueAxe.new');
-                    Route::get('/update/{id}', 'showUpdateForm')->name('strategiqueAxe.updateForm');
-                    Route::post('/update', 'updateForm')->name('strategiqueAxe.update');
-                    Route::get('/delete/{id}', 'delete')->name('strategiqueAxe.delete');
-                });
-        });
-
-        Route::prefix('plan-strategique/objectifs')->group(function () {
-            Route::controller(ObjectifController::class)
-                ->group(function () {
-                    Route::get('/', 'index')->name('strategiqueObjectif.all');
-                    Route::get('/new', 'showSaveForm')->name('strategiqueObjectif.new');
-                    Route::post('/new', 'saveForm')->name('strategiqueObjectif.new');
-                    Route::get('/update/{id}', 'showUpdateForm')->name('strategiqueObjectif.updateForm');
-                    Route::post('/update', 'updateForm')->name('strategiqueObjectif.update');
-                    Route::get('/delete/{id}', 'delete')->name('strategiqueObjectif.delete');
-                });
-        });
-
-        Route::prefix('plan-strategique/activites')->group(function () {
-            Route::controller(ActiviteController::class)
-                ->group(function () {
-                    Route::get('/', 'index')->name('strategiqueActivite.all');
-                    Route::get('/new', 'showSaveForm')->name('strategiqueActivite.new');
-                    Route::post('/new', 'saveForm')->name('strategiqueActivite.new');
-                    Route::get('/update/{id}', 'showUpdateForm')->name('strategiqueActivite.updateForm');
-                    Route::post('/update', 'updateForm')->name('strategiqueActivite.update');
-                    Route::get('/delete/{id}', 'delete')->name('strategiqueActivite.delete');
-                });
-        });
-
+        
         Route::prefix('documents')->group(function () {
             Route::controller(BackDocumentController::class)
                 ->group(function () {
