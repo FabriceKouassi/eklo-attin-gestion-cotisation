@@ -1,0 +1,316 @@
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (min-width: 361px) {
+
+    body
+    {
+        /* background-color: rgb(39, 243, 250); */
+        background-color: rgb(237, 243, 243);
+    }
+    /*Mobile menu page */
+
+    .menu-secondaire
+    {
+        min-width: 98%;
+    }
+    
+    .menu-principal, .mobile-menu-icon1
+    {
+        display: none;
+    }
+    .mobile-menu-icon
+    {
+        display: block;
+    }
+
+    .header-logo-card
+    {
+        padding: 0 10px;
+    }
+
+    .logo1
+    {
+        width: 150px;
+    }
+
+    .logo2
+    {
+        width: 90px;
+    }
+
+    .header-logo-card .caption
+    {
+        display: none;
+    }
+
+    /*Contact page */
+    .contact-subtitle
+    {
+        width: 100% !important;
+    }
+    .contact-section {
+        width: 100%;
+    }
+    
+    /*Reclamation page */
+    .reclamation-img-illustration
+    {
+        display: none;
+    }
+
+    .reclamation-section
+    {
+        width: 100%;
+        position: relative;
+    }
+    
+    /*Blog page */
+    .blog-grid
+    {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    /* Document page */
+    .cards-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .doc-form #keyword, .doc-form #search_type_certificat, .doc-form #search
+    {
+        width: 100%;
+    }
+    
+    /*Faq */
+    .faq-box-img
+    {
+        display: none;
+    }
+    .faq-box
+    {
+        width: 100%;
+    }
+    
+    /* Prestations */
+    .allantenne {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .allantenne .event-card {
+        width: 100%;
+    }
+    
+    /*Mot du directeur */
+    .box-nv1-row
+    {
+        flex-direction: column;
+    }
+    .box-nv2-c2
+    {
+        width: 100%;
+    }
+
+    
+    /*Agenda */
+
+    .e-calendar
+    {
+        left: 30%;
+    }
+    .events-list
+    {
+        height: 300px;
+        width: 100%;
+        margin-top: 45%;
+    }
+    .calendarBox
+    {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 150px;
+        width: 100%;
+    }
+    /*Agenda */
+
+    .event-card
+    {
+        width: 80%;
+    }
+    .e-calendar
+    {
+        min-width: 60% !important;
+        max-width: 60% !important;
+    }
+    .event-card {
+        width: 90%;
+        margin-left: 20px;
+    }
+    .events-list
+    {
+        margin-top: 100%;
+    }
+    .event-image, .event-image-2
+    {
+        width: 100px;
+    }
+    /*Tarification */
+    .container-tarification {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .cadre-tarification
+    {
+        overflow: auto;
+    }
+    .tarification-image img {
+        width: 100%;
+    }
+    .box-nv2-icon img {
+        width: 30px;
+    }
+    .tarification-section-container .pagination
+    {
+        margin-top: 30px;
+    }
+
+    /*Antenne detail */
+    .antenne-section
+    {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .antenne-list
+    {
+        margin-top: 0 !important;
+        height: 50vh;
+    }
+    .antenne-buttons , .antenne-container
+    {
+        width: 100%;
+    }
+    .event-time .email
+    {
+        font-size: 0.9em;
+    }
+
+    /*Accueil */
+
+    .slide-1
+    {
+        display: none;
+    }
+    .slide-2
+    {
+        display: block;
+    }
+       
+    /* .slide-2-container .slide-principal .slick-list
+    {
+        height: 50vh !important;
+    }
+    .slide-2-container .slide-principal .slick-list .slick-track
+    {
+        width: 80% !important;
+        height: 50vh !important;
+    }
+    .slide-2-container .slide-principal .carousel .slick-list .slick-track > div
+    {
+        width: 100% !important;
+        top: 0 !important;
+        left: 0 !important;
+        height: 50vh !important;
+    }
+    .slide-2-container .carousel-infoUtils .slick-list
+    {
+        height: auto;
+    } */
+
+    .about-full-content, .about-content
+    {
+        width: 100%;
+    }
+    .about-full-content
+    {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .about-title
+    {
+        font-size: 1.7rem;
+    }
+    .about-image
+    {
+        width: 100%;
+        height: 30vh;
+    }
+    .labo-content
+    {
+        display: none;
+    }
+    .labo-content-2
+    {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+        gap: 10px;
+        text-align: center;
+    }
+    .labo-card
+    {
+        border-radius: 10px;
+        padding: 10px;
+        width: 100%;
+        height: 30vh;
+        box-shadow: 1px 2px 10px #f2f2f2;
+        overflow-y: auto;
+    }
+    .labo-card-content
+    {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+    }
+    section.doctor-advice .simple-box-img
+    {
+        margin: 0;
+    }
+    section.doctor-advice .doctor-advice-title h1 {
+        font-size: 2.2em;
+    }
+    section.doctor-advice .doctor-advice-title {
+        left: 33%;
+        top: 5vh;
+    }
+    section.doctor-advice .simple-box-text
+    {
+        margin-top: 5% !important;
+    }
+    section.doctor-advice .simple-box-img
+    {
+        width: 50%;
+        height: 40vh;
+    }    
+    .dossier-full-content
+    {
+        flex-direction: column-reverse !important;
+    }
+    .dossier-image
+    {
+        width: 100%;
+        height: 40vh;
+    }
+    .mediatheque-content
+    {
+        flex-direction: row !important;
+    }
+    .prestation-name a
+    {
+        font-size: 0.5em;
+    }
+    .about-bull-texte a:hover
+    {
+        color: black;
+        transition: color 0.3s linear;
+    }
+}

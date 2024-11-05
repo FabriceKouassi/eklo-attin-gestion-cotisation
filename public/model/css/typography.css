@@ -1,0 +1,177 @@
+.font-weight-regular {
+  font-eight: 400;
+}
+
+.font-weight-medium {
+  font-eight: 500;
+}
+
+.font-weight-semi-bold {
+  font-eight: 600;
+}
+
+.font-weight-bold {
+  font-eight: 700;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1.33;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+h4 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+h5 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+h6 {
+  font-size: 1.07rem;
+  font-weight: 700;
+  line-height: 1.75;
+}
+
+.subtitle1 {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.subtitle2 {
+  font-size: 0.87rem;
+  font-weight: 600;
+  line-height: 1.58;
+}
+
+.body1 {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+p,
+.body2 {
+  font-size: 0.87rem;
+  line-height: 1.58;
+}
+
+.caption {
+  font-size: 0.75rem;
+  line-height: 1.3;
+}
+
+button {
+  font-weight: 700;
+  line-height: 1.7;
+  font-size: 0.9rem;
+  text-transform: unset;
+  cursor: pointer;
+  border-radius: 45px;
+}
+
+/* -------------------------------------- text color --------------------------------------- */
+.text-secondary {
+  color: #777171;
+}
+
+.text-actived {
+  color: #009ef7;
+}
+
+/* ---------------------------------- @media ---------------------------------------------------- */
+
+@media (min-width: 600px) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  h3 {
+    font-size: 1.62rem;
+  }
+
+  h4 {
+    font-size: 1.25rem;
+  }
+
+  h5 {
+    font-size: 1.18rem;
+  }
+
+  h6 {
+    font-size: 1.12rem;
+  }
+}
+
+@media (min-width: 900px) {
+  h1 {
+    font-size: 3.5rem;
+  }
+
+  h2 {
+    font-size: 2.75rem;
+  }
+
+  h3 {
+    font-size: 1.87rem;
+  }
+
+  h4 {
+    font-size: 1.5rem;
+  }
+
+  h5 {
+    font-size: 1.25rem;
+  }
+
+  h6 {
+    font-size: 1.125rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  h1 {
+    font-size: 3.75rem;
+  }
+
+  h2 {
+    font-size: 3rem;
+  }
+
+  h3 {
+    font-size: 2rem;
+  }
+
+  h4 {
+    font-size: 1.5rem;
+  }
+
+  h5 {
+    font-size: 1.25rem;
+  }
+
+  h6 {
+    font-size: 1.125rem;
+  }
+}

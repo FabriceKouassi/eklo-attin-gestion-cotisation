@@ -1,0 +1,73 @@
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+    /* body
+    {
+        background-color: aqua;
+    } */
+    
+    /*Mobile menu */
+    .menu-principal
+    {
+        display: block;
+    }
+
+    .container-width {
+        padding: 0 10%;
+    }
+
+    /* Contact page*/
+    .contact-section {
+        width: 50%;
+    }
+
+    /*Blog page */
+    .blog-grid
+    {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    /* Document page */
+    
+    .document .d-flex-2
+    {
+        flex-wrap: nowrap;
+    }
+    .doc-form #keyword, .doc-form #search_type_certificat
+    {
+        width: 30%;
+        box-sizing: border-box;
+    }
+    .doc-form #search
+    {
+        width: auto;
+    }
+    
+    .cards-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /*Prestation */
+    
+    .allantenne {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 10px;
+    }
+    .allantenne .event-card
+    {
+        width: 300px;
+    }
+    
+    /*Tarification */
+    .container-tarification {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    /*Accueil */
+    .about-bull-texte
+    {
+        top: 15vh;
+    }
+}

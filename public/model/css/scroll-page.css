@@ -1,0 +1,22 @@
+/* Styles pour la barre de défilement */
+/* Pour les navigateurs WebKit (Chrome, Safari, etc.) */
+::-webkit-scrollbar {
+    width: 10px; /* Largeur de la barre de défilement */
+}
+
+::-webkit-scrollbar-track {
+    background-color: #f1f1f1; /* Couleur de fond de la barre de défilement */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #888; /* Couleur de la barre de défilement */
+    border-radius: 5px; /* Arrondi des coins */
+}
+
+/* Pour Firefox */
+/* Ajustement de la largeur et de la couleur de la barre de défilement */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f1f1f1;
+}
+

@@ -1,0 +1,29 @@
+
+.gallery-container
+{
+    width: 100%;
+    min-height: 100vh;
+    
+}
+
+.gallery
+{
+    /* display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 30px; */
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.gallery img
+{
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+    padding: 5px;
+}

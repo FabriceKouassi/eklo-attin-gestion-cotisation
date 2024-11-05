@@ -1,0 +1,219 @@
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+    /* body
+    {
+        background-color: brown;
+    } */
+
+    /*Mobile menu */
+    .menu-principal
+    {
+        display: none;
+    }
+
+    .header-logo-card
+    {
+        padding: 0 10px;
+    }
+
+    .mobile-menu-icon
+    {
+        display: block;
+    }
+
+    .logo1
+    {
+        width: 200px;
+    }
+
+    .logo2
+    {
+        width: 100px;
+    }
+   
+    /*Contact page */
+    .contact-subtitle
+    {
+        width: 80% !important;
+    }
+
+    .contact-section {
+        width: 80%;
+    }
+
+    /*Reclamation page */
+    .reclamation-img-illustration
+    {
+        display: block;
+    }
+
+    .reclamation-section
+    {
+        width: 60%;
+        position: absolute;
+    }
+    .reclamation-img-card
+    {
+        height: 70vh;
+    }
+    
+    /*Blog page */
+    .blog-grid
+    {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    /* Document page */
+        
+    .cards-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .doc-form #keyword
+    {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .doc-form #search_type_certificat
+    {
+        width: 60%;
+    }
+    .doc-form #search
+    {
+        width: 35%;
+    }
+
+    /* Faq */
+    .faq-box-img
+    {
+        display: block;
+    }
+    /* Prestations */
+    .allantenne {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .allantenne .event-card {
+        width: 100%;
+    }
+    
+    /*Mot du directeur */
+    .box-nv1-row
+    {
+        flex-direction: row;
+    }
+    .box-nv2-c2
+    {
+        width: 50%;
+    }
+    /*Agenda */
+
+    .e-calendar
+    {
+        max-width: 50% !important;
+        min-width: 50% !important;
+        position: absolute;
+        right: 10px;
+    }
+    .event-card {
+        width: 80%;
+    }
+    .events-list
+    {
+        margin-top: 45%;
+    }
+    
+    /*Tarification */
+    .container-tarification {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .tarification-image img {
+        width: 350px;
+    }
+    .cadre-tarification
+    {
+        height: 88%;
+    }
+
+    /*Accueil */
+
+    /* .slide-2-container .slide-principal .slick-list
+    {
+        height: 50vh !important;
+    }
+    .slide-2-container .slide-principal .slick-list .slick-track
+    {
+        width: 80% !important;
+        height: 50vh !important;
+    }
+    .slide-2-container .slide-principal .carousel .slick-list .slick-track > div
+    {
+        width: 100% !important;
+        top: 0 !important;
+        left: 0 !important;
+        height: 50vh !important;
+    }
+    .slide-2-container .carousel-infoUtils .slick-list
+    {
+        height: auto;
+    } */
+
+    .about-bull-texte
+    {
+        top: 9vh;
+        /* overflow: auto; */
+        height: 15vh;
+    }
+    .about-title
+    {
+        font-size: 1.7rem;
+    }
+    .about-image
+    {
+        width: 100%;
+        height: auto;
+    }
+    
+    .labo-content
+    {
+        flex-wrap: wrap;
+    }
+    
+    .labo-card
+    {
+        width: 50%;
+    }
+    .labo-content-2
+    {
+        flex-wrap: nowrap;
+    }
+    section.doctor-advice .doctor-advice-title {
+        left: 21%;
+        top: 10vh;
+    }
+    section.doctor-advice .simple-box-img
+    {
+        height: 90vh;
+    }
+    section.doctor-advice .simple-box-text
+    {
+        margin-top: 30vh !important;
+    }
+    section.doctor-advice .doctor-advice-title h1 {
+        font-size: 5em;
+    }
+    section.doctor-advice .doctor-advice-title {
+        left: 21%;
+    }
+    .dossier-image
+    {
+        width: 100%;
+        height: inherit;
+    }
+    .dossier-full-content
+    {
+        flex-direction: row !important;
+    }
+    .prestation-name a 
+    {
+        font-size: 1.1em;
+    }
+}

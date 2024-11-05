@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/index.css">
+    <!--link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"-->
+
+    <title>INHP</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+    <!-- Basic stylesheet -->
+    <!-- <link rel="stylesheet" href="owl-carousel/owl.carousel.css"> -->
+
+    <!-- Default Theme -->
+    <!-- <link rel="stylesheet" href="owl-carousel/owl.theme.css"> -->
+
+    <!-- You can use latest version of jQuery  -->
+    <!-- <script src="jquery-1.9.1.min.js"></script> -->
+
+    <!-- Include js plugin -->
+    <!-- <script src="assets/owl-carousel/owl.carousel.js"></script> -->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var currentPage = window.location.pathname; // Récupère le chemin de la page actuelle
+            var menuLinks = document.querySelectorAll('nav ul li a'); // Sélectionne tous les liens du menu
+
+            // Parcourt tous les liens du menu
+            menuLinks.forEach(function (link) {
+                var linkPage = link.getAttribute('data-page');
+
+                // Vérifie si le lien correspond à la page actuelle
+                if (currentPage.includes(linkPage)) {
+                    link.classList.add('active'); // Ajoute la classe "active" au lien correspondant
+                }
+            });
+        });
+    </script>
+</head>
+
+
+
+<body>
+    <!-- SECTION NAV BAR -->
+    <section class="container-width section-nav">
+        <div class="mini-header-nav">
+            <div class="box-left">
+                <img src="./assets/icons/logo-texte-inhp.svg" alt="inhp-1">
+                <span>
+                    <img src="./assets/icons/logo-inhp.svg" alt="inhp-2">
+                    <div class="caption">INHP, LA SANTE PAR LA PRÉVENTION</div>
+                </span>
+            </div>
+
+            <div class="box-right">
+                <div>
+                    <img src="./assets/icons/twitter.svg" alt="twitter">
+                    <img src="./assets/icons/facebook.svg" alt="facebook">
+                    <img src="./assets/icons/youtube.svg" alt="youtube">
+                </div>
+
+                <div class="body2">info@inhp.ci</div>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html" class="body1" data-page="index">Accueil</a></li>
+                <li>
+                    <a href="#" class="body1" data-page="presentation">Présentation</a>
+                    <ul class="submenu">
+                        <li><a href="presentation.html" class="body1" data-page="directeur">Mot du directeur</a></li>
+                        <li><a href="historique.html" class="body1" data-page="historique">Historique</a></li>
+                        <li>
+                            <a href="#" class="body1" data-page="missions">Mission et organisation</a>
+                            <ul class="subsubmenu">
+                                <li><a href="mission.html" class="mission.html" data-page="mission">Mission</a></li>
+                                <li><a href="organisation.html" class="body1" data-page="organisation">Organisation</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="plan_strategique.html" class="body1" data-page="strategique">Plan strategique</a>
+                        </li>
+                        <li><a href="politique_qualite.html" class="body1" data-page="politique">Politique qualité</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#" class="body1" data-page="prestation">Prestation</a>
+                    <ul class="submenu">
+                        <li><a href="prestation_tarifee.html" class="mission.html" data-page="mission">Prestation
+                                tarifée</a></li>
+                        <li><a href="prestation_non_tarifee.html" class="body1" data-page="organisation">Prestation non
+                                tarifée</a></li>
+                    </ul>
+                </li>
+                <li><a href="tarification.html" class="body1" data-page="tarification">Tarification</a></li>
+                <li>
+                    <a href="#" class="body1" data-page="infos_utiles">Infos utiles</a>
+                    <ul class="submenu">
+                        <li><a href="calandrier_vaccination.html" class="mission.html" data-page="mission">Calendrier de
+                                vaccination</a></li>
+                        <li><a href="vaccins_disponible.html" class="body1" data-page="organisation">Vaccins
+                                disponible</a></li>
+                        <li><a href="galerie_photo.html" class="mission.html" data-page="mission">Galérie photo</a></li>
+                        <li><a href="faq.html" class="body1" data-page="organisation">FAQ</a></li>
+                    </ul>
+                </li>
+                <li><a href="agenda.html" class="body1" data-page="agenda">Agenda</a></li>
+                <li><a href="documents.html" class="body1" data-page="documents">Documents</a></li>
+                <li><a href="blog.html" class="body1" data-page="blog">Blog</a></li>
+                <li><a href="contacts.html" class="body1" data-page="contacts">Contacts</a></li>
+            </ul>
+        </nav>
+    </section>
+
+    <section class="container-body container-width">
+        <div class="box-nv1-row content-owl">
+            <div id="owl-demo" class="owl-carousel owl-theme">
+                <div class="item"><img src="./assets/images/image-owl1.png" alt="The Last of us"></div>
+                <div class="item"><img src="./assets/images/image-owl1.png" alt="GTA V"></div>
+                <div class="item"><img src="./assets/images/image-owl1.png" alt="Mirror Edge"></div>
+            </div>
+
+            <div class="cadre-info">
+                <div class="cadre-info-owl">
+                    <h4>Flash info</h4>
+                    <div class="cadre-info-owl-content">
+                        <h6>Ici defile les flash infos: Messages de sensibilisation ou d’annonce d’une activité.</h6>
+                    </div>
+                </div>
+
+                <div class="cadre-info-owl-search">
+                    <h5>Trouver une antenne proche de chez vous</h5>
+
+                    <input class="input-grey" type="text" placeholder="Selecte" />
+
+                    <button class="btn-outlined full-width">Rechercher</button>
+                </div>
+            </div>
+        </div>
+        <div class="box-nv1-row mt-5">
+            <div class="box-nv2-c4 custom-border-outline vh-15">
+                <div class="box-nv2-icon"></div>
+                <div class="box-nv2-text">LABORATOIRE DE BIOLOGIE MEDICALE</div>
+            </div>
+            <div class="box-nv2-c4 custom-border-solid">
+                <div class="box-nv2-icon"></div>
+                <div class="box-nv2-text">LABORATOIRE DE BIOLOGIE MEDICALE</div>
+            </div>
+            <div class="box-nv2-c4 custom-border-outline">
+                <div class="box-nv2-icon"></div>
+                <div class="box-nv2-text">LABORATOIRE DE BIOLOGIE MEDICALE</div>
+            </div>
+            <div class="box-nv2-c4 custom-border-solid">
+                <div class="box-nv2-icon"></div>
+                <div class="box-nv2-text">LABORATOIRE DE BIOLOGIE MEDICALE</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-full">
+        <div class="box-nv1-row back-red color-white">
+            <div class="box-nv2-c2-full p-50">
+                <h2>A Propos de l'INHP</h2>
+                <p>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed optio inventore consequatur
+                    labore accusamus soluta nostrum voluptates aperiam facere nulla quod facilis nisi, quae
+                    alias velit voluptas corrupti hic deleniti.
+                </p>
+                <button class="color-red mt-5">En savoir plus</button>
+            </div>
+            <div class="box-nv2-c2-full back-img" style="background-image: url('assets/images/image-owl1.png');"></div>
+        </div>
+        <div class="box-nv1-row">
+            <div class="box-nv2-c3 about-bull">
+                <img src="assets/images/blue-bulle.png" alt="">
+                <div class="simple-box about-bull-texte">
+                    <h5>VACINNATION</h5>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem quam,
+                        repellendus tempora quibusdam veniam itaque assumenda molestiae inventore
+                    </p>
+                </div>
+            </div>
+            <div class="box-nv2-c3 about-bull">
+                <img src="assets/images/red-bulle.png" alt="">
+                <div class="simple-box about-bull-texte">
+                    <h5>VACINNATION</h5>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem quam,
+                        repellendus tempora quibusdam veniam itaque assumenda molestiae inventore
+                    </p>
+                </div>
+            </div>
+            <div class="box-nv2-c3 about-bull">
+                <img src="assets/images/grey-bulle.png" alt="">
+                <div class="simple-box about-bull-texte">
+                    <h5>VACINNATION</h5>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem quam,
+                        repellendus tempora quibusdam veniam itaque assumenda molestiae inventore
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="section-title">
+            <img src="assets/images/molecule.png" alt="">
+            <h3>Actualités</h3>
+        </div>
+        <div class="box-nv1-row mt-5">
+            <div class="box-nv2-c2 back-img rd-15" style="background-image: url('assets/images/image-owl1.png');">
+                <div class="actuality-indication-box">
+                    <div class="simple-box"><button>A la une</button></div>
+                    <div class="simple-box back-white rd-15 mt-30">
+                        <h5>TITRE ACTUALITE</h5>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Quibusdam aliquam aperiam quas a expedita ipsum, ab deleniti doloribus.
+                            Incidunt esse quisquam eaque, amet rem odio officiis possimus officia a id.
+                        </p>
+                        <button class="mt-2 back-red color-white">Lire l'article</button>
+                    </div>
+                </div>
+            </div>
+            <div class="box-nv2-c2">
+                <div class="box-nv1-col">
+                    <div class="simple-box back-img rd-15"
+                        style="background-image: url('assets/images/image-owl1.png');">
+                        <div class="actuality-indication-box">
+                            <div class="simple-box back-white rd-15 mt-5">
+                                <h5>TITRE ACTUALITE</h5>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    Quibusdam aliquam aperiam quas a expedita ipsum, ab deleniti doloribus.
+                                    Incidunt esse quisquam eaque, amet rem odio officiis possimus officia a id.
+                                </p>
+                                <button class="mt-2 back-red color-white">Lire l'article</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="simple-box back-img mt-2 rd-15"
+                        style="background-image: url('assets/images/image-owl1.png');">
+                        <div class="actuality-indication-box">
+                            <div class="simple-box back-white rd-15 mt-5">
+                                <h5>TITRE ACTUALITE</h5>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    Quibusdam aliquam aperiam quas a expedita ipsum, ab deleniti doloribus.
+                                    Incidunt esse quisquam eaque, amet rem odio officiis possimus officia a id.
+                                </p>
+                                <button class="mt-2 back-red color-white">Lire l'article</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doctor-advice">
+        <div class="doctor-advice-title">
+            <h1>DOCTEUR</h1>
+            <span class="color-blue">CONSEIL</span>
+        </div>
+        <div class="box-nv1-row">
+            <div class="simple-box-img back-img rd-15" style="background-image: url('assets/images/docteur.jpg');">
+            </div>
+            <div class="simple-box">
+                <img src="assets/images/molecule.png" alt="" class="molecule-img">
+                <div class="simple-box-text">
+                    <h5>DENNISE MARIA</h5>
+                    <span>Biologiste</span>
+                    <p>
+                        Voyager dans un autre pays est l’occasion de remettre à jour ses vaccinations…
+                    </p>
+                    <button class="mt-2 back-red color-white plr-50">Lire plus</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-full">
+        <div class="box-nv1-row">
+            <div class="box-nv2-c2-full">
+                <div class="section-title">
+                    <img src="assets/images/molecule.png" alt="">
+                    <h3>Dossier du mois</h3>
+                </div>
+                <p class="p-50 bold-700">
+                    LE CENTRES DES OPERATIONS D’URGENCE DE SANTE PUBLIQUE
+                    (COU) DE SANTE PUBLIQUE : QUE FAUT-IL SAVOIR ?
+                </p>
+                <p class="p-50 bold-700">
+                    COU, le Contexte de sa mise place…
+                    Alors que l’Organisation mondiale de la santé (OMS) a annoncé la fin de
+                </p>
+                <div class="simple-box pl-50">
+                    <button class="back-red color-white plr-50">Lire plus</button>
+                </div>
+            </div>
+            <div class="box-nv2-c2-full back-img" style="background-image: url('assets/images/young.jpg');"></div>
+        </div>
+    </section>
+
+    <section class="mediatheque">
+        <div class="section-title">
+            <img src="assets/images/molecule.png" alt="">
+            <h3>Mediathèques</h3>
+        </div>
+        <div class="box-nv1-row mt-5">
+            <div class="box-nv2-c4 back-img" style="background-image: url('assets/images/docteur.jpg');"></div>
+            <div class="box-nv2-c4 back-img" style="background-image: url('assets/images/young.jpg');"></div>
+            <div class="box-nv2-c4 back-img" style="background-image: url('assets/images/docteur.jpg');"></div>
+            <div class="box-nv2-c4 back-img" style="background-image: url('assets/images/young.jpg');"></div>
+        </div>
+        <div class="simple-box"><button class="back-red color-white plr-50">Voir la mediatheque</button></div>
+    </section>
+
+    <section class="section-full partenaires p-50">
+        <div class="section-title">
+            <img src="assets/images/molecule.png" alt="">
+            <h3>Partenaires</h3>
+        </div>
+        <div class="box-nv1-row mt-5">
+            <div class="box-nv2-c4"><img src="assets/images/logoplus.jpg" alt=""></div>
+            <div class="box-nv2-c4"><img src="assets/images/logoplus.jpg" alt=""></div>
+            <div class="box-nv2-c4"><img src="assets/images/logoplus.jpg" alt=""></div>
+            <div class="box-nv2-c4"><img src="assets/images/logoplus.jpg" alt=""></div>
+        </div>
+    </section>
+
+    <section class="section-full">
+        <div class="container-grid footer-newsletter container-width">
+            <div class="item">
+                <h4 class="active">NEWSLETTER</h4>
+                <span class="body1">Abonnez-vous à notre bulletin électronique pour obtenir des conseils utiles et des
+                    ressources
+                    précieuses.</span>
+            </div>
+            <div class="form-newsletter item">
+                <form>
+                    <div class="container-grid">
+                        <div class="item">
+                            <input type="text" placeholder="Nom" />
+                        </div>
+                        <div class="item">
+                            <input type="email" placeholder="Email" />
+                        </div>
+                    </div>
+                    <button class="btn-contained btn-error full-width">S'inscrire</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content container-grid">
+            <div class="item">
+                <img src="./assets/icons/logo-texte-inhp.svg" alt="inhp-1">
+                <div>
+                    <a href="index.html" class="body2" data-page="index">Accueil</a>
+                    <a href="index.html" class="body2" data-page="index">Presentation</a>
+                    <a href="index.html" class="body2" data-page="index">Prestation</a>
+                    <a href="index.html" class="body2" data-page="index">Tarification</a>
+                    <a href="index.html" class="body2" data-page="index">Infos utiles</a>
+                    <a href="index.html" class="body2" data-page="index">Contacts</a>
+                </div>
+            </div>
+            <div class="item">
+                <h6>OÙ NOUS TROUVER?</h6>
+                <div class="divider"></div>
+                <div class="body2">INHP de Treichville</div>
+                <div class="body2">(225)21 25 92 54 / (225)21 25 92 54</div>
+                <div class="body2">info@inhp.ci</div>
+            </div>
+            <div class="item">
+                <h6>À PROPOS DE L'INSTITUT</h6>
+                <div class="divider"></div>
+                <span class="body2">L’Institut d’Hygiène ou Institut National d’Hygiène Publique (INHP) doit son
+                    existence actuelle à la volonté de l’administration coloniale</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $("#owl-demo").owlCarousel({
+
+                navigation: true,
+
+                slideSpeed: 300,
+                paginationSpeed: 400,
+
+                items: 1,
+                itemsDesktop: false,
+                itemsDesktopSmall: false,
+                itemsTablet: false,
+                itemsMobile: false
+
+            });
+
+        });
+    </script>
+</body>
+
+</html>

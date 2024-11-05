@@ -1,0 +1,21 @@
+/* -------------------------------------- bg-color ------------------------------------------ */
+
+.bg-primary {
+  background: #009ef7;
+  color: #fff;
+}
+
+.bg-primary-light {
+  background: #c4d7f4;
+  color: #009ef7;
+}
+
+.bg-primary-lighter {
+  background: #d9e6fa;
+  color: #009ef7;
+}
+
+.bg-secondary {
+  background: #f8f8f8;
+  color: #000;
+}

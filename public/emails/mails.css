@@ -1,0 +1,24 @@
+body {
+    background-color: #f2f2f2;
+}
+
+.mail-content {
+    padding: 20px;
+    border-radius: 5px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+}
+
+.otp-code {
+    font-weight: 800;
+    font-size: 2rem;
+    color: #088abd;
+}
+
+.mail-btn {
+    padding: 1rem;
+    background-color: #d0eefa;
+}

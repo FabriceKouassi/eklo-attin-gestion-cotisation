@@ -1,0 +1,152 @@
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+    /* body
+    {
+        background-color: rgb(8, 78, 78);
+    } */
+
+    /*Mobile menu */
+    .menu-principal
+    {
+        display: block;
+    }
+
+    .container-width {
+        padding: 0 2%;
+    }
+
+    .menu-secondaire, .mobile-menu-icon
+    {
+        display: none !important;
+    }
+
+    /*Contact page */
+    .contact-subtitle
+    {
+        width: 64% !important;
+    }
+
+    .contact-section {
+        width: 70%;
+    }
+
+    /*Blog page */
+    .blog-grid
+    {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Document page */
+        
+    .cards-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .document .d-flex-2
+    {
+        flex-wrap: nowrap;
+    }
+    .doc-form #keyword
+    {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .doc-form #search_type_certificat
+    {
+        width: 60%;
+    }
+    .doc-form #search
+    {
+        width: 35%;
+    }
+
+    /* Prestations */
+    .allantenne {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .allantenne .event-card
+    {
+        width: 100%;
+    }
+    
+    /*Agenda */
+    
+    .e-calendar
+    {
+        max-width: 40% !important;
+        min-width: 40% !important;
+        right: 10px;
+        left: inherit;
+    }
+    .events-list
+    {
+        height: 600px;
+        margin-top: 0;
+    }
+    .event-card
+    {
+        width: 50%;
+    }
+    
+    /*Tarification */
+    .tarification-image img {
+        width: 365px;
+    }
+
+    /*Antenne detail */
+    .antenne-section
+    {
+        flex-direction: row;
+        gap: 10px;
+    }
+    .antenne-list
+    {
+        margin-top: 0;
+        height: 80vh;
+    }
+    .antenne-buttons , .antenne-container
+    {
+        width: 80%;
+    }
+
+    /*Accueil */
+    .slide-1
+    {
+        display: block;
+    }
+    .slide-2
+    {
+        display: none;
+    }
+    .about-bull-texte
+    {
+        top: 9vh;
+        /* overflow: auto; */
+        height: 20vh;
+    }
+        
+    .labo-content
+    {
+        flex-wrap: nowrap;
+    }
+    .labo-content
+    {
+        display: flex;
+    }
+    .labo-content-2
+    {
+        display: none;
+    }
+    section.doctor-advice .doctor-advice-title h1 {
+        font-size: 7em;
+    }
+    section.doctor-advice .doctor-advice-title {
+        left: 21%;
+        top: 10vh;
+    }
+    section.doctor-advice .simple-box-text
+    {
+        margin-top: 40vh !important;
+    }
+}

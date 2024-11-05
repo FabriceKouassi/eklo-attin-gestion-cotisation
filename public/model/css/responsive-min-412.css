@@ -1,0 +1,95 @@
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (min-width: 412px) {
+
+    /* body
+    {
+        background-color: rgb(60, 255, 0);
+    } */
+    /*Mobile menu */
+    
+    .menu-principal
+    {
+        display: none;
+    }
+    .mobile-menu-icon
+    {
+        display: block;
+    }
+
+    .header-logo-card
+    {
+        padding: 0 10px;
+    }
+
+    .logo1
+    {
+        width: 150px;
+    }
+
+    .logo2
+    {
+        width: 90px;
+    }
+
+    /* Contact Page */
+
+    .contact-subtitle
+    {
+        width: 100% !important;
+    }
+    .contact-section {
+        width: 100%;
+    }
+    
+    /*Reclamation page */
+    .reclamation-img-illustration
+    {
+        display: none;
+    }
+
+    .reclamation-section
+    {
+        width: 100%;
+        position: relative;
+    }
+    .allantenne {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .allantenne .event-card {
+        width: 100%;
+    }
+
+    /*Agenda */
+    .events-list
+    {
+        margin-top: 90%;
+    }
+    /*Tarification */
+    .container-tarification {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .cadre-tarification
+    {
+        overflow: auto;
+    }
+    .tarification-image img {
+        width: 100%;
+    }
+    .box-nv2-icon img {
+        width: 30px;
+    }
+    .tarification-section-container .pagination
+    {
+        margin-top: 30px;
+    }
+    
+    /*Antenne detail */
+    .event-time .email
+    {
+        font-size: 1em;
+    }
+    .prestation-name a
+    {
+        font-size: 0.6em;
+    }
+}

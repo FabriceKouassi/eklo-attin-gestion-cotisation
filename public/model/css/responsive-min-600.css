@@ -1,0 +1,159 @@
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+    /* body
+    {
+        background-color: rgb(216, 16, 93);
+    } */
+
+    /*Mobile menu */
+    .menu-secondaire
+    {
+        min-width: 70%;
+    }
+
+    .menu-principal
+    {
+        display: none;
+    }
+    .mobile-menu-icon
+    {
+        display: block;
+    }
+
+    .header-logo-card
+    {
+        padding: 0 10px;
+    }
+
+    .logo1
+    {
+        width: 150px;
+    }
+
+    .logo2
+    {
+        width: 90px;
+    }
+
+    .header-logo-card .caption
+    {
+        display: block;
+    }
+
+    /*Contact page */
+
+    .contact-subtitle
+    {
+        width: 90% !important;
+    }
+
+    .contact-section {
+        width: 90%;
+    }
+
+    /*Reclamation page */
+    .reclamation-img-illustration
+    {
+        display: none;
+    }
+
+    .reclamation-section
+    {
+        width: 100%;
+        position: relative;
+    }
+    
+    /*Blog page */
+    .blog-grid
+    {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Prestations */
+    .allantenne {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .allantenne .event-card {
+        width: 100%;
+    }
+
+    /*Mot du directeur */
+    .box-nv1-row
+    {
+        flex-direction: column;
+    }
+    .box-nv2-c2
+    {
+        width: 100%;
+    }
+    /*Agenda */
+    .events-list
+    {
+        margin-top: 60%;
+    }
+    .e-calendar
+    {
+        min-width: 50% !important;
+        max-width: 50% !important;
+    }
+    .event-image, .event-image-2
+    {
+        width: 150px;
+    }
+    /*Tarification */
+    .box-nv2-icon img {
+        width: 50px;
+    }
+    .tarification-section-container .pagination
+    {
+        margin-top: 40px;
+    }
+    .cadre-tarification
+    {
+        height: 50vh;
+        overflow: auto;
+    }
+    /*Antenne detail */
+    .event-time .email
+    {
+        font-size: 1.2em;
+    }
+    /*Accueil */
+    
+    .about-full-content, .about-content
+    {
+        width: 100%;
+    }
+    .about-full-content
+    {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .about-image
+    {
+        width: 100%;
+        height: 30vh;
+    }
+    .labo-card
+    {
+        width: 40%;
+    }
+    .labo-content-2
+    {
+        flex-wrap: wrap;
+    }
+    .about-title
+    {
+        font-size: 1.7rem;
+    }
+    
+    /*Accueil */
+    section.doctor-advice .doctor-advice-title h1 {
+        font-size: 4em;
+    }
+   .prestation-name a
+   {
+        font-size: 0.8em;
+   }
+}

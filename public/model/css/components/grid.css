@@ -1,0 +1,26 @@
+/* - --------------------------------------------------- */
+.container-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.item {
+  flex-grow: 1;
+  flex-basis: 0;
+  padding: 10px;
+  box-sizing: border-box;
+  overflow-x: none;
+}
+
+@media (min-width: 768px) {
+  .item {
+    max-width: calc(100% - 0px);
+  }
+}
+
+@media (max-width: 768px) {
+  .item {
+    min-width: calc(100% - 0px);
+  }
+}
