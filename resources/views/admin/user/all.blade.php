@@ -35,14 +35,16 @@
                                 <?= $item->phone ? "<br>#".$item->phone : "" ?>
                             </td>
                             <td class="text-center">
-                                @if ($item->enabled==1)
+                                @if ($item->enabled == 1)
                                     <span class="badge badge-light">Actif</span>
-                                    <span class="badge badge-light {{ $item->role == 'editor' ? 'bg-info' : 'bg-success' }}">
-                                        {{ $item->role == 'editor' ? 'Editeur' : 'Administrateur' }}</span>
+                                    <span class="badge badge-light text-light {{ $item->role == 'membre' ? 'bg-info' : ($item->role == 'gestionnaire' ? 'bg-warning' : 'bg-success') }}">
+                                        {{ $item->role == 'membre' ? 'Membre' : ($item->role == 'gestionnaire' ? 'Gestionnaire' : 'Administrateur') }}
+                                    </span>
                                 @else
                                     <span class="badge badge-danger">Désactivé</span>
-                                    <span class="badge badge-danger {{ $item->role == 'editor' ? 'bg-info' : 'bg-success' }}">
-                                        {{ $item->role == 'editor' ? 'Editeur' : 'Administrateur' }}</span>
+                                    <span class="badge badge-danger {{ $item->role == 'membre' ? 'bg-info' : ($item->role == 'gestionnaire' ? 'bg-warning' : 'bg-success') }}">
+                                        {{ $item->role == 'membre' ? 'Membre' : ($item->role == 'gestionnaire' ? 'Gestionnaire' : 'Administrateur') }}
+                                    </span>
                                 @endif
                             </td>
                             <td class="text-center">

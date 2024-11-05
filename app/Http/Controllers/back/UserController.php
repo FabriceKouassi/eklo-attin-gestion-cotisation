@@ -44,29 +44,32 @@ class UserController extends Controller
 
     public function saveForm(Request $request)
     {
+        $request->merge([
+            'phone' => preg_replace('/\s+/', '', trim($request->phone)),
+            'email' => preg_replace('/\s+/', '', trim($request->email)),
+        ]);
+
         $validator = Validator::make($request->all(), [
             'nom' => 'required',
             'prenoms' => 'required',
-            'email' => 'required',
-            'password' => 'required',
+            'phone' => 'required|unique:users,phone,except,id',
+            'email' => 'nullable|email|unique:users,email,except,id',
+        ], [
+            'nom.required' => 'Le nom est obligatoire',
+            'prenoms.required' => 'Les prénoms sont obligatoires',
+            'phone.required' => 'Le téléphone est obligatoire',
+            'phone.unique' => 'Le téléphone est déjà utilisé',
+            'email.email' => 'L\'email est incorrect',
+            'email.unique' => 'L\'email est déjà utilisé',            
         ]);
+
         if ($validator->fails()) {
+            $firstErrorMessage = $validator->errors()->first();
+            $request->session()->flash('ess-msg-error', $firstErrorMessage);
+
             return redirect()->back()->withErrors($validator)->withInput();
         }
 
-        $users = User::all();
-        foreach ($users as $key => $user) {
-            if($user->email == $request->email)
-            {
-                $request->session()->flash('ess-msg', "Email déjà utilisé dans le systeme");
-                return redirect()->back()->withErrors($validator)->withInput();
-            }
-            if($user->phone == $request->phone)
-            {
-                $request->session()->flash('ess-msg', "Contact déjà utilisé dans le systeme");
-                return redirect()->back()->withErrors($validator)->withInput();
-            }
-        }
         $user = User::create([
             'nom' => $request->nom,
             'prenoms' => $request->prenoms,
@@ -110,13 +113,28 @@ class UserController extends Controller
 
     public function updateForm(Request $request)
     {
+        $request->merge([
+            'phone' => preg_replace('/\s+/', '', trim($request->phone)),
+            'email' => preg_replace('/\s+/', '', trim($request->email)),
+        ]);
+
         $validator = Validator::make($request->all(), [
             'nom' => 'required',
             'prenoms' => 'required',
-            'email' => 'required',
-        ]);
+            'phone' => 'sometimes|unique:users,phone,' . $request->userId,
+            'email' => 'sometimes|nullable|email|unique:users,email,' . $request->userId,
+        ], [
+                'nom.required' => 'Le nom est obligatoire',
+                'prenoms.required' => 'Les prénoms sont obligatoires',
+                'phone.unique' => 'Le numéro de téléphone est déjà utilisé',
+                'email.unique' => 'L\'email est déjà utilisé',
+            ]
+        );
 
         if ($validator->fails()) {
+            $firstErrorMessage = $validator->errors()->first();
+            $request->session()->flash('ess-msg-error', $firstErrorMessage);
+            
             return redirect()->back()->withErrors($validator)->withInput();
         }
 

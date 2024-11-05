@@ -54,12 +54,6 @@
                              name="password" placeholder="Mot de passe" data-msg="Veuiller renseigner votre mot de passe"
                              required autocomplete="current-password">
                         </div>
-                        <div class="form-group">
-                            <div class="custom-control custom-checkbox small">
-                                <input type="checkbox" class="custom-control-input" id="customCheck">
-                                <label class="custom-control-label" for="customCheck">Restez connecter</label>
-                            </div>
-                        </div>
                         <button type="submit" class="btn btn-primary btn-user btn-block">
                             Se Connecter
                         </button>

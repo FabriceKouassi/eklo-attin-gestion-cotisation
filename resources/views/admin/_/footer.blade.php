@@ -9,7 +9,7 @@
                 <a href="{{-- config('global.ownerLink') }}" target="_blank">{{-- config('global.owner') --}}</a>
             -->
                 - Produced by
-            <a href="{{ config('global.ownerLink') }}" target="_blank">{{ config('global.name') }}</a>
+            <a href="{{ config('global.ownerLink') }}" target="_blank">{{ config('global.programer_name') }}</a>
         </span>
         </div>
     </div>

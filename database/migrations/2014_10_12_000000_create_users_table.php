@@ -16,9 +16,9 @@ return new class extends Migration
             $table->string('nom');
             $table->string('prenoms');
             $table->string('password')->nullable();//default(bcrypt('password'));
-            $table->string('email')->unique();
+            $table->string('email')->unique()->nullable();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('phone')->unique()->nullable();
+            $table->string('phone')->unique();
             $table->string('role')->enum(['admin', 'editor'])->default('editor');
             $table->integer('enabled')->default(1); // 1: activer,  0 : desactiver
             $table->string('img')->nullable();

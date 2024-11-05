@@ -126,7 +126,7 @@
                 $.confirm({
                     title: 'Erreur!',
                     typeAnimated: true,
-                    content: "Certains champs présentent des erreurs",
+                    content: "<?= Session::get('ess-msg-error') ?>",
                     buttons: {
                         somethingElse: {
                             text: 'Fermer',

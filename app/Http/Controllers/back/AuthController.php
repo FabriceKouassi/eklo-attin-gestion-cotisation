@@ -37,8 +37,13 @@ class AuthController extends Controller
     {
         $data = $request->validated();
 
+        $loginField = filter_var($data['email'], FILTER_VALIDATE_EMAIL) ? 'email' : 'phone';
+        
         // Tentez de connecter l'utilisateur
-        if (auth()->attempt(['email' => $data['email'], 'password' => $data['password']])) {
+        if (auth()->attempt([
+                $loginField => $data['email'],
+                'password' => $data['password']
+        ], true)) {
 
             $user = User::query()->where('id', Auth::user()->id)->first();
             $user->last_login = now();

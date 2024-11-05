@@ -28,22 +28,25 @@
                 </div>
                 <div class="form-group">
                     <label>Email *</label>
-                    <input type="text" class="form-control ess-is-required ess-inputmask-email" name="email"
+                    <input type="text" class="form-control ess-inputmask-email" name="email"
                     data-msg="Veuillez renseigner l'adresse mail" value="{{Request::old('email')}}">
                 </div>
                 <div class="form-group">
                     <label>Téléphone </label>
-                    <input type="text" data-inputmask="'mask': '99 99 99 99 99'" class="form-control" name="phone"
-                    value="{{Request::old('phone')}}">
+                    <input type="text" data-inputmask="'mask': '99 99 99 99 99'" class="form-control ess-is-required" name="phone"
+                    value="{{Request::old('phone')}}" data-msg="Veuillez renseigner le contact">
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">Role</label>
                     <select class="form-control ess-select2 " name="role">
-                        <option value="editor">
-                            Editeur
-                        </option>
-                        <option value="admin">
+                        <option value="admin" {{ old('role') == 'admin' ? 'selected' : '' }}>
                             Administrateur
+                        </option>
+                        <option value="gestionnaire" {{ old('role') == 'gestionnaire' ? 'selected' : '' }}>
+                            Gestionnaire
+                        </option>
+                        <option value="membre" {{ old('role') == 'membre' ? 'selected' : '' }}>
+                            Membre
                         </option>
                     </select>
                 </div>

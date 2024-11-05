@@ -65,7 +65,6 @@
                     <hr>
                     <div class="text-center">
                         <a class="small" href="{{ route('login.form') }}">Avez vous déjà un compte ? Cliquez ici !</a> <br>
-                        <a class="small" href="{{ route('front.index') }}">Site Web</a>
                     </div>
                 </div>
                 </div>

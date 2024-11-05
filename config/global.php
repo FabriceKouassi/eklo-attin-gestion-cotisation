@@ -1,8 +1,9 @@
 <?php
 
 return [
-    'name' => 'INHP',
+    'name' => 'EKLO ATTIN',
     'btn_save_name' => 'Nouvel Enregistrement',
+    'programer_name' => 'KIDOCI GROUP',
 
     //Icones
     'icon_laboratoire' => 'icones/laboratoires',

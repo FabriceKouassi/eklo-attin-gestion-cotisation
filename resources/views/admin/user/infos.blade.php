@@ -73,13 +73,17 @@
                         <div class="form-group">
                             <label for="exampleFormControlSelect1">Role</label>
                             <select class="form-control ess-select2 " name="role" {{ Auth::user()->role=='editor' ? 'disabled' : ''}}>
-                                <option value="editor"
-                                    {{ $user->role=='editor' ? 'selected="selected"' : "" }}>
-                                    Editeur
-                                </option>
                                 <option value="admin"
                                     {{ $user->role=='admin' ? 'selected="selected"' : "" }}>
                                     Administrateur
+                                </option>
+                                <option value="gestionnaire"
+                                    {{ $user->role=='gestionnaire' ? 'selected="selected"' : "" }}>
+                                    Gestionnaire
+                                </option>
+                                <option value="membre"
+                                    {{ $user->role=='membre' ? 'selected="selected"' : "" }}>
+                                    Membre
                                 </option>
                             </select>
                         </div>
