@@ -18,7 +18,7 @@ class FonctionFactory extends Factory
     {
         return [
             'libelle' => fake()->name(),
-            'montant' => fake()->rand(500, 10000),
+            'montant' => rand(500, 10000),
         ];
     }
 }

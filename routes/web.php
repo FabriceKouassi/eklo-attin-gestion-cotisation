@@ -5,6 +5,7 @@ use App\Http\Controllers\back\AuthController;
 use App\Http\Controllers\back\CompanyController;
 use App\Http\Controllers\back\AboutController as BackAboutController;
 use App\Http\Controllers\back\ContactController as BackContactController;
+use App\Http\Controllers\back\FonctionController;
 use App\Http\Controllers\back\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -37,19 +38,6 @@ Route::prefix('/')->group(function () {
         Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
         Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
-        Route::prefix('contacts')->group(function () {
-            Route::controller(BackContactController::class)
-                ->group(function () {
-                    Route::get('/', 'index')->name('contact.all');
-                    Route::get('/new', 'showSaveForm')->name('contact.new');
-                    Route::post('/new', 'saveForm')->name('contact.new');
-                    Route::get('/update/{id}', 'showUpdateForm')->name('contact.updateForm');
-                    Route::post('/update', 'updateForm')->name('contact.update');
-                    Route::get('/delete/{id}', 'delete')->name('contact.delete');
-                    Route::delete('/many-delete', 'manyDelete')->name('contact.manyDelete');
-                });
-        });
-
         Route::prefix('company')->group(function () {
             Route::controller(CompanyController::class)
                 ->group(function () {
@@ -75,6 +63,18 @@ Route::prefix('/')->group(function () {
                     Route::get('/update/{id}', 'showUpdateForm')->name('user.updateForm');
                     Route::post('/update', 'updateForm')->name('user.update');
                     Route::get('/delete/{id}', 'delete')->name('user.delete');
+                });
+        });
+
+        Route::prefix('fonctions')->group(function () {
+            Route::controller(FonctionController::class)
+                ->group(function () {
+                    Route::get('/', 'index')->name('fonction.all');
+                    Route::get('/new', 'showSaveForm')->name('fonction.new');
+                    Route::post('/new', 'saveForm')->name('fonction.new');
+                    Route::get('/update/{id}', 'showUpdateForm')->name('fonction.updateForm');
+                    Route::post('/update', 'updateForm')->name('fonction.update');
+                    Route::get('/delete/{id}', 'delete')->name('fonction.delete');
                 });
         });
     });

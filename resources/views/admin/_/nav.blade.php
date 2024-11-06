@@ -18,15 +18,23 @@
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Tableau de bord</span></a>
         </li>
-        @if (Auth::user()->role  == 'admin')
-            <hr class="sidebar-divider">
+        <hr class="sidebar-divider">
             <li class="nav-item
-            {{ ($pIndex=='user.all' || $pIndex=='user.new' || $pIndex=='user.infos') ? 'active' : '' }}">
-                <a class="nav-link" href="{{ route('user.all') }}">
+            {{ ($pIndex=='fonction.all' || $pIndex=='fonction.new' || $pIndex=='fonction.infos') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('fonction.all') }}">
                     <i class="fas fa-fw fa-user"></i>
-                    <span>Utilisateurs</span>
+                    <span>Fonctions</span>
                 </a>
             </li>
+        @if (Auth::user()->role  === 'admin')
+            <hr class="sidebar-divider">
+                <li class="nav-item
+                {{ ($pIndex=='user.all' || $pIndex=='user.new' || $pIndex=='user.infos') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('user.all') }}">
+                        <i class="fas fa-fw fa-user"></i>
+                        <span>Utilisateurs</span>
+                    </a>
+                </li>
         @endif
     <hr class="sidebar-divider">
         <li class="nav-item
