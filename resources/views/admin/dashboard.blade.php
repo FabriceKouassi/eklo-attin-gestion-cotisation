@@ -16,7 +16,7 @@
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Type de Prestations</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $prestationType->count() }}</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-user-edit fa-2x text-gray-300"></i>
@@ -33,7 +33,7 @@
                 <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                     <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Tarifications</div>
-                    <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $tarifications->count() }}</div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
                     </div>
                     <div class="col-auto">
                     <i class="fas fa-pen fa-2x text-gray-300"></i>
@@ -52,7 +52,7 @@
                     <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">Documents</div>
                     <div class="row no-gutters align-items-center">
                         <div class="col-auto">
-                        <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{ $documents->count() }}</div>
+                        <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"></div>
                         </div>
                     </div>
                     </div>
@@ -72,7 +72,7 @@
                     <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Nouveaux contacts</div>
                     <div class="row no-gutters align-items-center">
                         <div class="col-auto">
-                        <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{ $contacts->count() }}</div>
+                        <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"></div>
                         </div>
                     </div>
                     </div>
@@ -90,7 +90,7 @@
                 <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                     <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Reclamations</div>
-                    <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $reclamation->count() }}</div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
                     </div>
                     <div class="col-auto">
                         <i class="fas fa-user-edit fa-2x text-gray-300"></i>

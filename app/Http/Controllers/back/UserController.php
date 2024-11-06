@@ -6,8 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Models\Company;
 use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\File;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
@@ -83,7 +81,6 @@ class UserController extends Controller
         if($request->file('img')){
             $file = $request->file('img');
             $filename = $file->getClientOriginalName();
-            //$path = $file->storeAs('public/'.config('global.image_user'), $filename);
             $file->move(public_path('storage/').config('global.image_user'), $filename);
 
             $user->img = $filename;

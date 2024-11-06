@@ -11,9 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('strategique_axes', function (Blueprint $table) {
+        Schema::create('fonctions', function (Blueprint $table) {
             $table->id();
-            $table->string('libelle');
+            $table->string('libelle')->unique();
+            $table->string('montant');
             $table->timestamps();
         });
     }
@@ -23,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('strategique_axes');
+        Schema::dropIfExists('fonctions');
     }
 };

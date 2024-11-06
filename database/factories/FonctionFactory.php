@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\VaccinFamille>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Fonction>
  */
-class VaccinFamilleFactory extends Factory
+class FonctionFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,7 +17,8 @@ class VaccinFamilleFactory extends Factory
     public function definition(): array
     {
         return [
-            'libelle' => $this->faker->paragraph(1),
+            'libelle' => fake()->name(),
+            'montant' => fake()->rand(500, 10000),
         ];
     }
 }

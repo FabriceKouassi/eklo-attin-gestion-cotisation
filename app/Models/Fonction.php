@@ -5,12 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Tarification extends Model
+class Fonction extends Model
 {
     use HasFactory;
-    protected $table = 'tarifications';
+
+    protected $table = 'fonctions';
     protected $fillable = [
-        'title',
-        'content'
+        'libelle',
+        'montant',
     ];
 }
