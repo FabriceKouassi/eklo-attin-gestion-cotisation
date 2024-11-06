@@ -6,6 +6,7 @@ namespace App\Models;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
@@ -14,11 +15,8 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-    */
+    protected $table = 'users';
+
     protected $fillable = [
         'nom',
         'prenoms',
@@ -28,6 +26,7 @@ class User extends Authenticatable
         'phone',
         'role',
         'isActived',
+        'fonction_id'
     ];
 
     /**
@@ -68,5 +67,10 @@ class User extends Authenticatable
     public function diffForHumans(string $date)
     {
         return Carbon::parse($date)->diffForHumans();
+    }
+
+    public function fonction():BelongsTo
+    {
+        return $this->belongsTo(Fonction::class);
     }
 }

@@ -5,9 +5,13 @@
 <div class="container-fluid">
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-      <h1 class="h3 mb-0 text-gray-800">{{ $title }}</h1>
-      <a href="{{ route('user.new') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
-        <i class="fas fa-plus fa-sm text-white-50"></i> Nouvel utilisateur</a>
+        <h1 class="h3 mb-0 text-gray-800">{{ $title }}</h1>
+        @if (Auth::user()->role  === 'admin')
+            <a href="{{ route('user.new') }}" class="d-sm-inline-block btn btn-sm btn-primary shadow-sm {{ $fonctionCount === 0 ? 'disabled' : '' }}">
+                <i class="fas fa-plus fa-sm text-white-50"></i>
+                {{ config('global.btn_save_name') }}
+            </a>
+        @endif      
     </div>
 
     <div class="card shadow mb-4">
@@ -19,6 +23,7 @@
                             <th></th>
                             <th>Dernière connexion</th>
                             <th>Nom et prénoms</th>
+                            <th>Fonctions</th>
                             <th>Contacts</th>
                             <th class="text-center">Etat | Role</th>
                             <th width="90"></th>
@@ -30,6 +35,7 @@
                             <td class="text-center"><a class="img" style="background-image: url('{{ $item->getImg() }}');"></a></td>
                             <td>{{ $item->last_login !== null ? $item->diffForHumans($item->last_login) : 'Jamais' }}</td>
                             <td>{{ $item->nom }} {{ $item->prenoms }}</td>
+                            <td>{{ $item->fonction->libelle }}</td>
                             <td>
                                 {{ $item->email }}
                                 <?= $item->phone ? "<br>#".$item->phone : "" ?>
@@ -48,13 +54,15 @@
                                 @endif
                             </td>
                             <td class="text-center">
-                                <a href="{{ route('user.updateForm', [$item->id]) }}" class="btn btn-warning btn-circle btn-sm">
-                                    <i class="fas fa-info-circle"></i>
-                                </a>
-                                <a href="{{ route('user.delete', [$item->id]) }}" class="btn btn-danger btn-circle btn-sm ess-link-checked"
-                                    data-msg="Souhaitez-vous suprimer définitivement ce utilisateur ({{ $item->nom }} {{ $item->prenoms }})">
-                                    <i class="fas fa-trash"></i>
-                                </a>
+                                @if (Auth::user()->role  === 'admin')
+                                    <a href="{{ route('user.updateForm', [$item->id]) }}" class="btn btn-warning btn-circle btn-sm">
+                                        <i class="fas fa-info-circle"></i>
+                                    </a>
+                                    <a href="{{ route('user.delete', [$item->id]) }}" class="btn btn-danger btn-circle btn-sm ess-link-checked"
+                                        data-msg="Souhaitez-vous suprimer définitivement ce utilisateur ({{ $item->nom }} {{ $item->prenoms }})">
+                                        <i class="fas fa-trash"></i>
+                                    </a>
+                                @endif
                             </td>
                         </tr>
                     @endforeach

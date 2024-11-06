@@ -40,10 +40,11 @@
 
                         <button type="submit" class="btn btn-primary btn-sm btn-icon-split mt-2">
                             <span class="icon text-gray-600">
-                              <i class="fas fa-arrow-right"></i>
+                                <i class="fas fa-arrow-right"></i>
                             </span>
                             <span class="text">Modifier</span>
-                      </button>
+                        </button>
+                        
                     </form>
                 </div>
             </div>

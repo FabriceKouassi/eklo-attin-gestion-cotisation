@@ -5,9 +5,12 @@
 <div class="container-fluid">
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-      <h1 class="h3 mb-0 text-gray-800">{{ $title }}</h1>
-      <a href="{{ route('fonction.new') }}" class="d-sm-inline-block btn btn-sm btn-primary shadow-sm">
-        <i class="fas fa-plus fa-sm text-white-50"></i> {{ config('global.btn_save_name') }}</a>
+        <h1 class="h3 mb-0 text-gray-800">{{ $title }}</h1>
+        @if (Auth::user()->role  === 'admin')
+            <a href="{{ route('fonction.new') }}" class="d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+                <i class="fas fa-plus fa-sm text-white-50"></i> {{ config('global.btn_save_name') }}
+            </a>
+        @endif
     </div>
 
     <div class="card shadow mb-4">
@@ -29,10 +32,10 @@
                                 {{ $item->montant }}
                             </td>
                             <td class="text-center">
-                                <a href="{{ route('fonction.updateForm', [$item->id]) }}" class="btn btn-warning btn-circle btn-sm">
-                                    <i class="fas fa-info-circle"></i>
-                                </a>
                                 @if (Auth::user()->role  === 'admin')
+                                    <a href="{{ route('fonction.updateForm', [$item->id]) }}" class="btn btn-warning btn-circle btn-sm">
+                                        <i class="fas fa-info-circle"></i>
+                                    </a>
                                     <a href="{{ route('fonction.delete', [$item->id]) }}" class="btn btn-danger btn-circle btn-sm ess-link-checked"
                                         data-msg="Voulez vous supprimer cet enregistrement ?">
                                         <i class="fas fa-trash"></i>

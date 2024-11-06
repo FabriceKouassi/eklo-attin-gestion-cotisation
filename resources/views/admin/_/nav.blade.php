@@ -26,38 +26,38 @@
                     <span>Fonctions</span>
                 </a>
             </li>
-        @if (Auth::user()->role  === 'admin')
-            <hr class="sidebar-divider">
-                <li class="nav-item
-                {{ ($pIndex=='user.all' || $pIndex=='user.new' || $pIndex=='user.infos') ? 'active' : '' }}">
-                    <a class="nav-link" href="{{ route('user.all') }}">
-                        <i class="fas fa-fw fa-user"></i>
-                        <span>Utilisateurs</span>
-                    </a>
-                </li>
-        @endif
-    <hr class="sidebar-divider">
-        <li class="nav-item
-            {{ ($pIndex=='company.infos') ? 'active' : '' }}
-            {{ ($pIndex=='client.all' || $pIndex=='client.new' || $pIndex=='client.infos') ? 'active' : '' }}
-            {{ ($pIndex=='referencement.all' || $pIndex=='referencement.new' || $pIndex=='referencement.infos') ? 'active' : '' }}
-            ">
-            <a class="nav-link" href="" data-toggle="collapse" data-target="#collapseParamsite" aria-expanded="true" aria-controls="collapseParamsite">
-                <i class="fa fa-tags"></i>
-                <span>Paramètres</span>
-                {{-- <span>Site web {{ config('global.name') }}</span> --}}
-            </a>
-            <div id="collapseParamsite" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-              <div class="bg-white py-2 collapse-inner rounded">
-                    <a class="collapse-item {{ ($pIndex=='company.infos') ? 'active' : '' }}" href="{{ route('company.new') }}">
-                        <span>Association</span>
-                    </a>
-                    <a class="collapse-item {{ ($pIndex=='about.infos') ? 'active' : '' }}" href="{{ route('about.new') }}">
-                        <span>A propos</span>
-                    </a>
-              </div>
-            </div>
-        </li>
+        <hr class="sidebar-divider">
+            <li class="nav-item
+            {{ ($pIndex=='user.all' || $pIndex=='user.new' || $pIndex=='user.infos') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('user.all') }}">
+                    <i class="fas fa-fw fa-user"></i>
+                    <span>Utilisateurs</span>
+                </a>
+            </li>
+    @if (Auth::user()->role  === 'admin')
+        <hr class="sidebar-divider">
+            <li class="nav-item
+                {{ ($pIndex=='company.infos') ? 'active' : '' }}
+                {{ ($pIndex=='client.all' || $pIndex=='client.new' || $pIndex=='client.infos') ? 'active' : '' }}
+                {{ ($pIndex=='referencement.all' || $pIndex=='referencement.new' || $pIndex=='referencement.infos') ? 'active' : '' }}
+                ">
+                <a class="nav-link" href="" data-toggle="collapse" data-target="#collapseParamsite" aria-expanded="true" aria-controls="collapseParamsite">
+                    <i class="fa fa-tags"></i>
+                    <span>Paramètres</span>
+                    {{-- <span>Site web {{ config('global.name') }}</span> --}}
+                </a>
+                <div id="collapseParamsite" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item {{ ($pIndex=='company.infos') ? 'active' : '' }}" href="{{ route('company.new') }}">
+                            <span>Association</span>
+                        </a>
+                        <a class="collapse-item {{ ($pIndex=='about.infos') ? 'active' : '' }}" href="{{ route('about.new') }}">
+                            <span>A propos</span>
+                        </a>
+                </div>
+                </div>
+            </li>
+    @endif
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
 

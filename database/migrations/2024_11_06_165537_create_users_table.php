@@ -15,6 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('nom');
             $table->string('prenoms');
+            $table->foreignId('fonction_id')
+                    ->constrained()
+                    ->onDelete('cascade')
+                    ->onUpdate('cascade');
             $table->string('password')->nullable();//default(bcrypt('password'));
             $table->string('email')->unique()->nullable();
             $table->timestamp('email_verified_at')->nullable();
@@ -23,6 +27,7 @@ return new class extends Migration
             $table->integer('enabled')->default(1); // 1: activer,  0 : desactiver
             $table->string('img')->nullable();
             $table->rememberToken();
+            $table->timestamp('last_login')->nullable();
             $table->timestamps();
         });
     }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\back;
 
 use App\Http\Controllers\Controller;
 use App\Models\Company;
+use App\Models\Fonction;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -16,12 +17,13 @@ class UserController extends Controller
         $title = 'Utilisateurs';
         $company = Company::first();
         $users = User::query()->oldest('nom')->where('id', '!=', auth()->user()->id)->where('email', '!=', 'fabrice.ako@dkbsolutions.com')->get();
-
+        $fonctionCount = Fonction::query()->count();
         $param = [
             'pIndex' => $pIndex,
             'title' => $title,
             'company' => $company,
             'users' => $users,
+            'fonctionCount' => $fonctionCount,
         ];
 
         return view('admin.user.all', $param);
@@ -30,11 +32,13 @@ class UserController extends Controller
     public function showSaveForm()
     {
         $company = Company::first();
+        $fonctions = Fonction::query()->oldest('libelle')->get();
 
         $param = [
           "title" => "Nouvel Utilisateur",
           "pIndex" => "user.new",
-          "company" => $company
+          "company" => $company,
+          "fonctions" => $fonctions,
         ];
 
         return view('admin.user.new', $param);
@@ -76,6 +80,7 @@ class UserController extends Controller
             'role' => $request->role,
             'phone' => $request->phone,
             'enabled' => $request->enabled,
+            'fonction_id' => $request->fonction_id,
         ]);
 
         if($request->file('img')){
@@ -96,6 +101,8 @@ class UserController extends Controller
     {
         $user = User::where('id', $id)->first();
         $company = Company::first();
+        $fonctions = Fonction::query()->oldest('libelle')->get();
+
         if($user == null) return redirect()->route('user.all');
 
         $param = [
@@ -103,6 +110,7 @@ class UserController extends Controller
           "pIndex" => "user.infos",
           "user" => $user,
           "company" => $company,
+          "fonctions" => $fonctions,
         ];
 
         return view('admin.user.infos', $param);
@@ -142,6 +150,7 @@ class UserController extends Controller
         $user->prenoms = $request->prenoms;
         $user->email = $request->email;
         $user->phone = $request->phone;
+        $user->fonction_id = $request->fonction_id;
 
         if($request->role != ""){
             $user->role = $request->role;
