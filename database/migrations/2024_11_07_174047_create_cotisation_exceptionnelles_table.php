@@ -1,0 +1,43 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::create('cotisation_exceptionnelles', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('demande_id')
+                    ->constrained()
+                    ->onDelete('cascade')
+                    ->onUpdate('cascade');
+                    
+            $table->foreignId('contributeur_id')
+                    ->constrained('users')
+                    ->onDelete('cascade')
+                    ->onUpdate('cascade');
+                    
+            $table->foreignId('gestionnaire_id')
+                    ->constrained('users')
+                    ->onDelete('cascade')
+                    ->onUpdate('cascade');
+
+            $table->string('montant');
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('cotisation_exceptionnelles');
+    }
+};

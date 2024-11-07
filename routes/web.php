@@ -5,6 +5,7 @@ use App\Http\Controllers\back\AuthController;
 use App\Http\Controllers\back\CompanyController;
 use App\Http\Controllers\back\AboutController as BackAboutController;
 use App\Http\Controllers\back\ContactController as BackContactController;
+use App\Http\Controllers\back\CotisationExceptionnelleController;
 use App\Http\Controllers\back\DemandeController;
 use App\Http\Controllers\back\FonctionController;
 use App\Http\Controllers\back\MotifController;
@@ -101,6 +102,18 @@ Route::prefix('/')->group(function () {
                     Route::get('/update/{id}', 'showUpdateForm')->name('demande.updateForm');
                     Route::post('/update', 'updateForm')->name('demande.update');
                     Route::get('/delete/{id}', 'delete')->name('demande.delete');
+                });
+        });
+
+        Route::prefix('cotisations-exceptionnelles')->group(function () {
+            Route::controller(CotisationExceptionnelleController::class)
+                ->group(function () {
+                    Route::get('/', 'index')->name('cotisationExceptionnelle.all');
+                    Route::get('/new', 'showSaveForm')->name('cotisationExceptionnelle.new');
+                    Route::post('/new', 'saveForm')->name('cotisationExceptionnelle.new');
+                    Route::get('/update/{id}', 'showUpdateForm')->name('cotisationExceptionnelle.updateForm');
+                    Route::post('/update', 'updateForm')->name('cotisationExceptionnelle.update');
+                    Route::get('/delete/{id}', 'delete')->name('cotisationExceptionnelle.delete');
                 });
         });
     });

@@ -61,6 +61,15 @@ class User extends Authenticatable
         return $this->hasMany(Demande::class, 'demandeur_id');
     }
 
+    public function cotisationExceptionnelleContributeur(): HasMany
+    {
+        return $this->hasMany(CotisationExceptionnelle::class, 'contributeur_id');
+    }
+
+    public function cotisationExceptionnelleGestionnaire(): HasMany
+    {
+        return $this->hasMany(CotisationExceptionnelle::class, 'gestionnaire_id');
+    }
 
     
     /**

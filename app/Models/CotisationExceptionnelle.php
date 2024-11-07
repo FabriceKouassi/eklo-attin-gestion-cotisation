@@ -5,7 +5,6 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class CotisationExceptionnelle extends Model
 {
@@ -14,30 +13,25 @@ class CotisationExceptionnelle extends Model
     protected $table = 'cotisation_exceptionnelles';
 
     protected $fillable = [
+        'demande_id',
         'contributeur_id',
-        'beneficiaire_id',
-        'motif_id', // Raison principale de la cotisation
         'montant',
         'gestionnaire_id', // User connecté
     ];
 
-    public function motif():BelongsTo
+    public function demande(): BelongsTo
     {
-        return $this->belongsTo(Motif::class);
+        return $this->belongsTo(Demande::class);
     }
 
-    public function contributeurs():HasMany
+    public function contributeur(): BelongsTo
     {
-        return $this->hasMany(User::class, 'contributeur_id');
+        return $this->belongsTo(User::class, 'contributeur_id');
     }
 
-    public function beneficiaires():HasMany
+    public function gestionnaire(): BelongsTo
     {
-        return $this->hasMany(User::class, 'beneficiaire_id');
+        return $this->belongsTo(User::class, 'gestionnaire_id');
     }
 
-    public function gestionnaires():HasMany
-    {
-        return $this->hasMany(User::class, 'gestionnaire_id');
-    }
 }

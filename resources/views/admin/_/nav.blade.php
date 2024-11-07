@@ -61,14 +61,18 @@
                     <span>Cotisations</span>
                 </a>
                 <div id="cotisations" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item {{ ($pIndex=='company.infos') ? 'active' : '' }}" href="#{{ route('company.new') }}">
-                            <span>Mensuelles</span>
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item {{  ($pIndex=='cotisationExceptionnelle.all' || $pIndex=='cotisationExceptionnelle.new' || $pIndex=='cotisationExceptionnelle.infos') ? 'active' : '' }}"
+                            href="#{{ route('cotisationExceptionnelle.all') }}">
+                            <i class="fa fa-handshake-o"></i>
+                            Mensuelles
                         </a>
-                        <a class="collapse-item {{ ($pIndex=='about.infos') ? 'active' : '' }}" href="#{{ route('about.new') }}">
-                            <span>Exceptionnelles</span>
+                        <a class="collapse-item {{  ($pIndex=='cotisationExceptionnelle.all' || $pIndex=='cotisationExceptionnelle.new' || $pIndex=='cotisationExceptionnelle.infos') ? 'active' : '' }}"
+                            href="{{ route('cotisationExceptionnelle.all') }}">
+                            <i class="fa fa-handshake-o"></i>
+                            Exceptionnelles
                         </a>
-                </div>
+                    </div>
                 </div>
             </li>
     @if (Auth::user()->role  === 'admin')

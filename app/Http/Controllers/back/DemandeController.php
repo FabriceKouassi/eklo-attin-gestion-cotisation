@@ -16,7 +16,6 @@ class DemandeController extends Controller
     public function index()
     {
         $demandes = Demande::query()->latest()->get();
-        $demandeur = Demande::query()->get();
 
         $company = Company::first();
 
@@ -24,11 +23,10 @@ class DemandeController extends Controller
         $title = 'Demandes';
 
         $param = [
-            'demandes' => $demandes,
             'pIndex' => $pIndex,
             'title' => $title,
             'company' => $company,
-            'demandeur' => $demandeur,
+            'demandes' => $demandes,
         ];
 
         return view('admin.demande.all',$param);
