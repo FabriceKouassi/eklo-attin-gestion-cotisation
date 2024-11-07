@@ -20,10 +20,26 @@
         </li>
         <hr class="sidebar-divider">
             <li class="nav-item
+            {{ ($pIndex=='motif.all' || $pIndex=='motif.new' || $pIndex=='motif.infos') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('motif.all') }}">
+                    <i class="fas fa-fw fa-user"></i>
+                    <span>Motifs</span>
+                </a>
+            </li>
+        <hr class="sidebar-divider">
+            <li class="nav-item
             {{ ($pIndex=='fonction.all' || $pIndex=='fonction.new' || $pIndex=='fonction.infos') ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('fonction.all') }}">
                     <i class="fas fa-fw fa-user"></i>
                     <span>Fonctions</span>
+                </a>
+            </li>
+        <hr class="sidebar-divider">
+            <li class="nav-item
+            {{ ($pIndex=='demande.all' || $pIndex=='demande.new' || $pIndex=='demande.infos') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('demande.all') }}">
+                    <i class="fas fa-fw fa-user"></i>
+                    <span>Demandes</span>
                 </a>
             </li>
         <hr class="sidebar-divider">
@@ -33,6 +49,27 @@
                     <i class="fas fa-fw fa-user"></i>
                     <span>Utilisateurs</span>
                 </a>
+            </li>
+        <hr class="sidebar-divider">
+            <li class="nav-item
+                {{ ($pIndex=='company.infos') ? 'active' : '' }}
+                {{ ($pIndex=='client.all' || $pIndex=='client.new' || $pIndex=='client.infos') ? 'active' : '' }}
+                {{ ($pIndex=='referencement.all' || $pIndex=='referencement.new' || $pIndex=='referencement.infos') ? 'active' : '' }}
+                ">
+                <a class="nav-link" href="" data-toggle="collapse" data-target="#cotisations" aria-expanded="true" aria-controls="cotisations">
+                    <i class="fa fa-tags"></i>
+                    <span>Cotisations</span>
+                </a>
+                <div id="cotisations" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item {{ ($pIndex=='company.infos') ? 'active' : '' }}" href="#{{ route('company.new') }}">
+                            <span>Mensuelles</span>
+                        </a>
+                        <a class="collapse-item {{ ($pIndex=='about.infos') ? 'active' : '' }}" href="#{{ route('about.new') }}">
+                            <span>Exceptionnelles</span>
+                        </a>
+                </div>
+                </div>
             </li>
     @if (Auth::user()->role  === 'admin')
         <hr class="sidebar-divider">

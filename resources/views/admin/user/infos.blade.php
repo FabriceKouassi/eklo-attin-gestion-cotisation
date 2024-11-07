@@ -72,15 +72,15 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>Email *</label>
-                                    <input type="text" class="form-control ess-is-required ess-inputmask-email" name="email"
+                                    <label>Email</label>
+                                    <input type="text" class="form-control ess-inputmask-email" name="email"
                                     data-msg="Veuiller renseigner l'adresse mail" value="{{ $user->email }}">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>Téléphone </label>
-                                    <input type="text" data-inputmask="'mask': '99 99 99 99 99'" class="form-control" name="phone"
+                                    <label>Téléphone *</label>
+                                    <input type="text" data-inputmask="'mask': '99 99 99 99 99'" class="form-control ess-is-required" name="phone"
                                     value="{{ $user->phone }}">
                                 </div>
                             </div>

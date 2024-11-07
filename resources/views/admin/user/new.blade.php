@@ -61,14 +61,14 @@
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label>Email *</label>
+                            <label>Email</label>
                             <input type="text" class="form-control ess-inputmask-email" name="email"
                             data-msg="Veuillez renseigner l'adresse mail" value="{{Request::old('email')}}">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label>Téléphone </label>
+                            <label>Téléphone *</label>
                             <input type="text" data-inputmask="'mask': '99 99 99 99 99'" class="form-control ess-is-required" name="phone"
                             value="{{Request::old('phone')}}" data-msg="Veuillez renseigner le contact">
                         </div>

@@ -39,8 +39,10 @@ class DatabaseSeeder extends Seeder
             'role' => 'gestionnaire',
         ]);
 
+        User::factory(5)->create();
+
         $this->call([
-            //
+            MotifSeeder::class,
         ]);
     }
 }
