@@ -6,7 +6,7 @@
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
       <h1 class="h3 mb-0 text-gray-800">{{ $title }}</h1>
-      <a href="{{ route('cotisationExceptionnelle.new') }}" class="d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+      <a href="{{ route('cotisationMensuelle.new') }}" class="d-sm-inline-block btn btn-sm btn-primary shadow-sm">
         <i class="fas fa-plus fa-sm text-white-50"></i> {{ config('global.btn_save_name') }}</a>
     </div>
 
@@ -27,7 +27,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($cotisationExceptionnelle as $item)
+                    {{-- @foreach ($cotisationMensuelle as $item)
                         <tr>
                             <td class="text-center">
                                 <span class="badge badge-light">{{ $item->demande->demandeur->nom }} {{ $item->demande->demandeur->prenoms }}</span>
@@ -48,18 +48,18 @@
                             @endif
                             
                             <td class="text-center">
-                                <a href="{{ route('cotisationExceptionnelle.updateForm', ['id'=>$item->id]) }}" class="btn btn-warning btn-circle btn-sm">
+                                <a href="{{ route('cotisationMensuelle.updateForm', ['id'=>$item->id]) }}" class="btn btn-warning btn-circle btn-sm">
                                     <i class="fas fa-info-circle"></i>
                                 </a>
                                 @if (Auth::user()->role  === 'admin')
-                                    <a href="{{ route('cotisationExceptionnelle.delete', ['id'=>$item->id]) }}" class="btn btn-danger btn-circle btn-sm ess-link-checked"
+                                    <a href="{{ route('cotisationMensuelle.delete', ['id'=>$item->id]) }}" class="btn btn-danger btn-circle btn-sm ess-link-checked"
                                         data-msg="Êtes vous sûr de vouloir supprimé ?">
                                         <i class="fas fa-trash"></i>
                                     </a>
                                 @endif
                             </td>
                         </tr>
-                    @endforeach
+                    @endforeach --}}
                 </tbody>
             </table>
         </div>

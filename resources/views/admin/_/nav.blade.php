@@ -62,8 +62,8 @@
                 </a>
                 <div id="cotisations" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item {{  ($pIndex=='cotisationExceptionnelle.all' || $pIndex=='cotisationExceptionnelle.new' || $pIndex=='cotisationExceptionnelle.infos') ? 'active' : '' }}"
-                            href="#{{ route('cotisationExceptionnelle.all') }}">
+                        <a class="collapse-item {{  ($pIndex=='cotisationMensuelle.all' || $pIndex=='cotisationMensuelle.new' || $pIndex=='cotisationMensuelle.infos') ? 'active' : '' }}"
+                            href="{{ route('cotisationMensuelle.all') }}">
                             <i class="fa fa-handshake-o"></i>
                             Mensuelles
                         </a>

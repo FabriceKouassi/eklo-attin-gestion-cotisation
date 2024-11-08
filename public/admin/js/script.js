@@ -1,3 +1,44 @@
+//---Cotisation mensuelle - mois et annee non payé
+$(document).ready(function() {
+    // Lors de la sélection d'un utilisateur
+    $('#cotisation_mensuelle_user_id').change(function() {
+        var userId = $(this).val(); // Récupérer l'ID de l'utilisateur sélectionné
+
+        if (userId) {
+            // Effectuer une requête AJAX pour récupérer les périodes non payées
+            $.ajax({
+                url: '/cotisations-mensuelle/periode-non-paye/' + userId,
+                type: 'GET',
+                success: function(data) {
+                    // Vider les options existantes
+                    $('#periods').empty();
+                                        
+                    // Ajouter les options de périodes non payées au champ 'periods'
+                    if (data.length > 0) {
+                        $.each(data, function(index, period) {
+                            // Ajouter chaque période à la liste déroulante
+                            $('#periods').append('<option value="' + period.mois + '-' + period.annee + '">' +
+                                'Mois: ' + period.mois + ' - Année: ' + period.annee + 
+                                '</option>');
+                        });
+                    } else {
+                        // Si aucune période non payée, afficher un message
+                        $('#periods').append('<option value="">Aucune période non payée</option>');
+                    }
+                },
+                error: function() {
+                    alert('Erreur lors de la récupération des périodes non payées.');
+                }
+            });
+
+        } else {
+            // Si aucun utilisateur sélectionné, vider le champ des périodes
+            $('#periods').empty().append('<option value="">Sélectionner un utilisateur</option>');
+        }
+    });
+});
+
+
 //---Fonction de vérification des élément requis d'un formulaire
 function formVirify(form) {
     var no_error = true;

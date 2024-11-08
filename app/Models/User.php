@@ -71,6 +71,11 @@ class User extends Authenticatable
         return $this->hasMany(CotisationExceptionnelle::class, 'gestionnaire_id');
     }
 
+    public function cotisation_mensuelles(): HasMany
+    {
+        return $this->hasMany(CotisationMensuelle::class);
+    }
+
     
     /**
      * The attributes that should be hidden for serialization.

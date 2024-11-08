@@ -4,13 +4,23 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class CotisationMensuelle extends Model
 {
     use HasFactory;
     protected $table = 'cotisation_mensuelles';
+
     protected $fillable = [
         'user_id',
-        'nombre_mois'
+        'mois',
+        'annee',
+        'date_paiement',
+        'status',
     ];
+
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
 }

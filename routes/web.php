@@ -6,6 +6,7 @@ use App\Http\Controllers\back\CompanyController;
 use App\Http\Controllers\back\AboutController as BackAboutController;
 use App\Http\Controllers\back\ContactController as BackContactController;
 use App\Http\Controllers\back\CotisationExceptionnelleController;
+use App\Http\Controllers\back\CotisationMensuelleController;
 use App\Http\Controllers\back\DemandeController;
 use App\Http\Controllers\back\FonctionController;
 use App\Http\Controllers\back\MotifController;
@@ -116,5 +117,19 @@ Route::prefix('/')->group(function () {
                     Route::get('/delete/{id}', 'delete')->name('cotisationExceptionnelle.delete');
                 });
         });
+
+        Route::prefix('cotisations-mensuelle')->group(function () {
+            Route::controller(CotisationMensuelleController::class)
+                ->group(function () {
+                    Route::get('/periode-non-paye/{userId}', 'getNonPaidPeriodsFromRegistration')->name('cotisationMensuelle.periode_non_paye');
+                    Route::get('/', 'index')->name('cotisationMensuelle.all');
+                    Route::get('/new', 'showSaveForm')->name('cotisationMensuelle.new');
+                    Route::post('/new', 'saveForm')->name('cotisationMensuelle.new');
+                    Route::get('/update/{id}', 'showUpdateForm')->name('cotisationMensuelle.updateForm');
+                    Route::post('/update', 'updateForm')->name('cotisationMensuelle.update');
+                    Route::get('/delete/{id}', 'delete')->name('cotisationMensuelle.delete');
+                });
+        });
+
     });
 });
