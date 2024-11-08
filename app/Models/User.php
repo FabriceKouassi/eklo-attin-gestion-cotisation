@@ -71,7 +71,7 @@ class User extends Authenticatable
         return $this->hasMany(CotisationExceptionnelle::class, 'gestionnaire_id');
     }
 
-    public function cotisation_mensuelles(): HasMany
+    public function cotisationMensuelles(): HasMany
     {
         return $this->hasMany(CotisationMensuelle::class);
     }

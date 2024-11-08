@@ -26,19 +26,16 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {{-- @foreach ($cotisationMensuelle as $item)
+                    @foreach ($cotisationMensuelle as $item)
                         <tr>
                             <td class="text-center">
-                                <span class="badge badge-light">{{ $item->demande->demandeur->nom }} {{ $item->demande->demandeur->prenoms }}</span>
+                                <span class="badge badge-light">{{ $item->user->nom }} {{ $item->user->prenoms }}</span>
                             </td>
                             <td class="text-center">
-                                {{ $item->contributeur->nom }} {{ $item->contributeur->prenoms }}
+                                {{ $item->format_date($item->date_paiement) }}
                             </td>
                             <td class="text-center">
-                                {{ $item->demande->motif->libelle }}
-                            </td>
-                            <td class="text-center">
-                                {{ $item->montant }}
+                                {{ $item->user->fonction->montant }}
                             </td>
                             @if (Auth::user()->role  === 'admin')
                                 <td class="text-center">
@@ -58,7 +55,7 @@
                                 @endif
                             </td>
                         </tr>
-                    @endforeach --}}
+                    @endforeach
                 </tbody>
             </table>
         </div>

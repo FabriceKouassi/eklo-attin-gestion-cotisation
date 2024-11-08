@@ -15,7 +15,7 @@ class CotisationMensuelleController extends Controller
 {
     public function index()
     {
-        $cotisationMensuelle = CotisationMensuelle::query()->latest()->get();
+        $cotisationMensuelle = CotisationMensuelle::query()->with(['user', 'gestionnaire'])->latest()->get();
 
         $company = Company::first();
 
