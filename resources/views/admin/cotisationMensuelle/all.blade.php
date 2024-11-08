@@ -16,9 +16,8 @@
             <table class="table table-bordered ess-dataTable" width="100%" cellspacing="0">
                 <thead class="thead-dark">
                     <tr>
-                        <th>Demandeurs</th>
-                        <th>Souscripteurs</th>
-                        <th>Motifs</th>
+                        <th>Membres</th>
+                        <th>Periodes payées</th>
                         <th>Montants</th>
                         @if (Auth::user()->role  === 'admin')
                             <th>Gestionnaires</th>

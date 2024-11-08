@@ -15,6 +15,13 @@
             <form class="ess-form-checked" autocomplete="off" method="post" action="{{ route('cotisationMensuelle.new') }}" enctype="multipart/form-data">
                 @csrf
                 <div class="row">
+                    <div class="col-md-1">                        
+                        <div class="form-group">
+                            <label>Payé *</label>
+                            <input type="checkbox" class="form-control ess-is-required" name="status" value="payé" data-msg="Cocher payé pour continuer le processus"
+                                {{ old('status') == 'payé' ? 'checked' : '' }} style="width: 1.5em">
+                        </div>
+                    </div>
                     <div class="col-md-11">
                         <div class="form-group">
                             <label for="exampleFormControlSelect1">Utilisateur</label>
@@ -29,13 +36,7 @@
                             </select>
                         </div>
                     </div>
-                    <div class="col-md-1">                        
-                        <div class="form-group">
-                            <label>Payé *</label>
-                            <input type="checkbox" class="form-control ess-is-required" name="status" value="payé" data-msg="Cocher payé pour continuer le processus"
-                                {{ old('status') == 'payé' ? 'checked' : '' }} style="width: 1.5em">
-                        </div>
-                    </div>
+                    
                     <div class="col-md-12">
                         <div class="form-group">
                             <label for="exampleFormControlSelect1">Périodes non payées</label>

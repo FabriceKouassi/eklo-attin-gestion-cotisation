@@ -22,6 +22,12 @@ return new class extends Migration
             $table->year('annee'); // Année de la cotisation
             $table->date('date_paiement')->nullable(); // Date du paiement (peut être null si non payé)
             $table->enum('status', ['non payé', 'payé']);
+
+            $table->foreignId('gestionnaire_id')
+                    ->constrained('users')
+                    ->onDelete('cascade')
+                    ->onUpdate('cascade');
+                    
             $table->timestamps();
         });
     }

@@ -13,6 +13,7 @@ class CotisationMensuelle extends Model
 
     protected $fillable = [
         'user_id',
+        'gestionnaire_id',
         'mois',
         'annee',
         'date_paiement',
@@ -22,5 +23,10 @@ class CotisationMensuelle extends Model
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
+    }
+    
+    public function gestionnaire(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'gestionnaire_id');
     }
 }
