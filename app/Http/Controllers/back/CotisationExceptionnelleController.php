@@ -40,7 +40,7 @@ class CotisationExceptionnelleController extends Controller
         $contributeurs = User::query()->oldest('nom')->where('id', '!=', Auth::user()->id)->get();
 
         $pIndex = 'cotisationExceptionnelle.new';
-        $title = 'Demandes';
+        $title = 'Cotisations Exceptionnelles';
 
         $param = [
             'pIndex' => $pIndex,

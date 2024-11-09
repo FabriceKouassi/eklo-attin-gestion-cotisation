@@ -52,9 +52,8 @@
             </li>
         <hr class="sidebar-divider">
             <li class="nav-item
-                {{ ($pIndex=='company.infos') ? 'active' : '' }}
-                {{ ($pIndex=='client.all' || $pIndex=='client.new' || $pIndex=='client.infos') ? 'active' : '' }}
-                {{ ($pIndex=='referencement.all' || $pIndex=='referencement.new' || $pIndex=='referencement.infos') ? 'active' : '' }}
+                {{ ($pIndex=='cotisationMensuelle.all' || $pIndex=='cotisationMensuelle.new' || $pIndex=='cotisationMensuelle.infos') ? 'active' : '' }}
+                {{ ($pIndex=='cotisationExceptionnelle.all' || $pIndex=='cotisationExceptionnelle.new' || $pIndex=='cotisationExceptionnelle.infos') ? 'active' : '' }}
                 ">
                 <a class="nav-link" href="" data-toggle="collapse" data-target="#cotisations" aria-expanded="true" aria-controls="cotisations">
                     <i class="fa fa-tags"></i>
@@ -67,7 +66,7 @@
                             <i class="fa fa-handshake-o"></i>
                             Mensuelles
                         </a>
-                        <a class="collapse-item {{  ($pIndex=='cotisationExceptionnelle.all' || $pIndex=='cotisationExceptionnelle.new' || $pIndex=='cotisationExceptionnelle.infos') ? 'active' : '' }}"
+                        <a class="collapse-item {{ ($pIndex=='cotisationExceptionnelle.all' || $pIndex=='cotisationExceptionnelle.new' || $pIndex=='cotisationExceptionnelle.infos') ? 'active' : '' }}"
                             href="{{ route('cotisationExceptionnelle.all') }}">
                             <i class="fa fa-handshake-o"></i>
                             Exceptionnelles

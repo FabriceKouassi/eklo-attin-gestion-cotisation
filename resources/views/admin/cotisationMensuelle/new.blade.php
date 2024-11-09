@@ -27,7 +27,7 @@
                             <label for="exampleFormControlSelect1">Utilisateur</label>
                             <select class="form-control ess-is-required" id="cotisation_mensuelle_user_id" name="user_id"
                                 data-msg="Veuillez selectionner l'utilisateur">
-                                <option value="">Sélectionner un utilisateur</option>
+                                <option value="" selected disabled>Sélectionner un utilisateur</option>
                                 @foreach($users as $item)
                                     <option value="{{ $item->id }}">
                                         {{ $item->nom }} {{ $item->prenoms }}

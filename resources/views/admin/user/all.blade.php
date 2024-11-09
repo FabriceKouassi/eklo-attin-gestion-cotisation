@@ -23,6 +23,7 @@
                             <th></th>
                             <th>Dernière connexion</th>
                             <th>Nom et prénoms</th>
+                            <th>Status</th>
                             <th>Fonctions</th>
                             <th>Contacts</th>
                             <th class="text-center">Etat | Role</th>
@@ -35,6 +36,11 @@
                             <td class="text-center"><a class="img" style="background-image: url('{{ $item->getImg() }}');"></a></td>
                             <td>{{ $item->last_login !== null ? $item->diffForHumans($item->last_login) : 'Jamais' }}</td>
                             <td>{{ $item->nom }} {{ $item->prenoms }}</td>
+                            <td>
+                                <span class="badge {{ $item->role == 'membre' ? 'bg-danger' : 'bg-default' }}">
+                                    {{ $item->role == 'membre' ? 'En retard' : 'A jour' }}
+                                </span>
+                            </td>
                             <td>{{ $item->fonction->libelle }}</td>
                             <td>
                                 {{ $item->email }}

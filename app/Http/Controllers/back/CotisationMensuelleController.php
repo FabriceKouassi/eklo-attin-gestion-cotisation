@@ -84,6 +84,7 @@ class CotisationMensuelleController extends Controller
             // Ajouter à la collection des cotisations
             $cotisations[] = [
                 'user_id' => $user->id,
+                'gestionnaire_id' => Auth::user()->id,
                 'mois' => $mois,
                 'annee' => $annee,
                 'date_paiement' => Carbon::createFromDate($annee, $mois, Carbon::now()->day),

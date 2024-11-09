@@ -18,6 +18,7 @@ class UserController extends Controller
         $company = Company::first();
         $users = User::query()->oldest('nom')->where('id', '!=', auth()->user()->id)->where('email', '!=', 'fabrice.ako@dkbsolutions.com')->get();
         $fonctionCount = Fonction::query()->count();
+        
         $param = [
             'pIndex' => $pIndex,
             'title' => $title,

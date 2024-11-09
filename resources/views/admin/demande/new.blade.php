@@ -20,6 +20,7 @@
                             <label for="exampleFormControlSelect1">Choisir le demandeur</label>
                             <select class="form-control ess-is-required" name="demandeur_id"
                                 data-msg="Veuillez selectionner le demandeur">
+                                <option value="" selected disabled>Sélectionner un demandeur</option>
                                 @foreach ($demandeurs as $item)
                                     <option value="{{ $item->id }}" {{ old('demandeur_id') == $item->id ? 'selected' : '' }}>
                                         {{ $item->nom }} {{ $item->prenoms }}
@@ -33,6 +34,7 @@
                             <label for="exampleFormControlSelect1">Choisir le motif de la demande *</label>
                             <select class="form-control ess-is-required" name="motif_id"
                                 data-msg="Veuillez selectionner le motif de la demande">
+                                <option value="" selected disabled>Sélectionner le motif</option>
                                 @foreach ($motifs as $item)
                                     <option value="{{ $item->id }}" {{ old('motif_id') == $item->id ? 'selected' : '' }}>
                                         {{ $item->libelle }}
